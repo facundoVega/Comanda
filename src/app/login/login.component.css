@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css?family=Fascinate+Inline');
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
+body
+{
+    width: 100% !important;
+    height: 100% !important;
+    margin:0!important;
+}
+
+.contenido
+{
+    width:100%;
+    height: 100%;
+    background-color:#183c54;
+    margin:0;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+  
+}
+.cerebro
+{
+    width: 400px;
+    height: 400px;
+    padding: 0px;
+    position: absolute;
+    top: -175%;
+    z-index: 0;
+}
+.caratula
+{
+    position:relative;
+    
+    margin-top:250px;
+    justify-content: center;
+    text-align: center;
+ 
+}
+.titulo
+{
+    position: relative;
+    width:100%;
+    display:flex;
+    justify-content: center;
+}
+.titulo h1
+{
+    font-size: 3.3em;
+    font-family: 'Fascinate Inline', cursive;
+    color: #4095b1;
+}
+.Registro
+{
+    background-color: #ffaa18;
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 40% 40%;
+    font-size: 1.6em;
+    width: 45%;
+    margin-right:10%;
+    color: white;
+    height: 20%;
+    font-family: 'Luckiest Guy', cursive;
+    outline:none;
+  
+}
+.Login
+{
+    background-color: #67b82d;
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 40% 40%;
+    font-size: 1.6em;
+    width: 45%;
+    color: white;
+    outline:none;
+    height: 20%;
+    font-family: 'Luckiest Guy', cursive;
+    
+}
+.Registro , .Login:hover
+{
+    cursor:pointer;
+}
+.elLogin
+{
+    position:absolute;
+    z-index:10;
+    width: 100%;
+    height: 100%;
+    background:#183c5473;
+    display:flex;
+    justify-content: center;
+
+}
+.ocultar
+{
+    display:none;
+    transition: 3seg;
+}
+.ocultar2
+{
+    display:none!important;
+}
+.cerrar
+{
+    background-image: url("../../assets/imgs/cerrar.png");
+    background-size: 100% 100%;
+    width: 15%;
+    height: 10%;
+    position: absolute;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    top: -3%;
+    right: 1%;
+}
+.cerrar:hover
+{
+    cursor:pointer;
+}
+
+.cuadroLogin
+{  
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+    background-color: #3ca5c5;
+    width: 400px;
+    height: 530px;
+    border: 7px solid white;
+    border-radius: 13%;
+}
+.cuadroLogin h1
+{
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 3em;
+    color: white;
+    letter-spacing: 2px;
+    text-align: center;
+    display:block;
+}
+
+.cuadroLogin input
+{
+    width: 70%;
+    padding: 6%;
+    margin-bottom: 4%;
+    font-family: 'Luckiest Guy', cursive;
+    font-size:1.5em;
+}
+.form button
+{
+    width:70%;
+    margin-top:-3%;
+}
+.cerebro2
+{
+    width:150px;
+    height:150px;
+    margin-bottom:-14%;
+}
+.elRegistro
+{
+    position:absolute;
+    z-index:10;
+    width: 100%;
+    height: 100%;
+    background:#183c5473;
+    display:flex;
+    justify-content: center;
+
+}
+.cuadroRegistro
+{  
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    margin-top:13px;
+    background-color: #3ca5c5;
+    width: 400px;
+    height: 600px;
+    border: 7px solid white;
+    border-radius: 13%;
+}
+.cuadroRegistro h1
+{
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 3em;
+    color: white;
+    letter-spacing: 2px;
+    text-align: center;
+    display:block;
+    margin-bottom:2%;
+}
+
+.cuadroRegistro input
+{
+    width: 70%;
+    padding: 6%;
+    margin-bottom: 3%;
+    font-family: 'Luckiest Guy', cursive;
+    font-size:1.5em;
+}
