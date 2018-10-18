@@ -1,0 +1,37 @@
+
+<div class="contenido">
+  <div class="instrucciones">
+      <img class="cerebro2" src="../../assets/imgs/cerebro3.png">
+    <h2>Instrucciones</h2>
+
+<p>* Seleccione una de las tres imagenes</p>
+  <p>Al momento de clickear la imagen</p> 
+ <p>se develara la jugada de la computadora.</p> 
+<p>
+  *Cada vez que gane una jugada se le sumaran 10 puntos
+</p>
+<p>
+  !Son tres jugadas por juego!
+</p>
+
+  </div >
+  <div class="juego">
+      <div class="miAlert" [class.mostrar]="mostrarAlert">
+          <div class="alert">
+              <h1>{{mensaje}}</h1>
+          </div>
+         
+        </div>
+    <h1 class="tituloJuego">¡Piedra, papel o tijera!</h1>
+    <div class="juegoPc">
+        <img class="pregunta" [src]="fotoMostrar" width="150px" height="150px">
+    </div>
+    <div class="juegoUser">
+    <img (click)="jugo('papel')" class="jugadaPapel" [class.activa]="activaPapel" src="../../assets/imgs/papel.png" width="150px" height="150px">
+    <img (click)="jugo('piedra')" class="jugadaPiedra" [class.activa]="activaPiedra" src="../../assets/imgs/piedra.png"  width="150px" height="150px">
+    <img (click)="jugo('tijera')" class="jugadaTijera" [class.activa]="activaTijera" src="../../assets/imgs/tijera.jpg"  width="150px" height="150px">
+
+    </div>
+
+  </div>
+</div>

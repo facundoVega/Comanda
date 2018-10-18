@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ConexionService } from '../conexion.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -8,8 +10,13 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
 ocultarLogin:boolean;
 ocultarRegistro:boolean;
+correoLogin:string="";
+passLogin:string="";
+correoReg:string="";
+passReg:string="";
+nombreReg:string="";
 
-  constructor() { 
+  constructor(private con:ConexionService) { 
 
     this.ocultarLogin = true;
     this.ocultarRegistro = true;
@@ -33,8 +40,33 @@ CerrarRegistro()
 {
   this.ocultarRegistro = true;
 }
-irAPrincipal()
+Loguear()
 {
-  location.href="./Inicial";
+ this.con.Loguear(this.passLogin, this.correoLogin).subscribe(
+  exito=>{ 
+
+    localStorage.setItem("token", (exito as any).token);
+  
+  location.href = "./Inicial/juegos";
+  },
+ error=>alert("error" + JSON.stringify(error))
+  
+
+
+
+ );
+}
+Registrar()
+{
+  this.con.Registrar( this.correoReg, this.nombreReg,this.passReg,).subscribe(
+    exito=>{alert(JSON.stringify(exito));
+      location.href="/";
+
+    },
+    error=>alert("error" + JSON.stringify(error))
+  );
+
+
+
 }
 }

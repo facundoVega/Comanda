@@ -3,14 +3,15 @@
 .contenidoJuegos
 {
     width:100%;
-   
-    
+    height: auto;
+   background-color:orangered;
+  
 }
 .piedra
 {
-    width: 50%;
+    width: 400px;
     background-color: #28b4e5;
-    height: 300px;
+    height: 280px;
     position: relative;
     border: 5px solid grn;
     display: flex;
@@ -19,7 +20,24 @@
     flex-direction: column;
     text-align: center;
     border-radius: 5%;
-    float:left;
+
+  
+    margin-top:5px;
+}
+.fila1
+{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    justify-content: space-around;
+}
+.fila2
+{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom:7px;
 }
 .piedra img
 {
@@ -32,32 +50,64 @@
     font-family: 'Luckiest Guy', cursive;
 
 }
-.agilidad
-{
-    width:50%;
-}
+
 .adivina
 {
-    width:50%;
+   
+    width: 400px;
+    background-color: #f6f6f6;
+    height: 280px;
+    position: relative;
+   
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    border-radius: 5%;
+ 
+    margin-top:10px;
+}
+.adivina h2
+{
+    text-align:center;
+    font-family: 'Luckiest Guy', cursive;
+}
+.adivina img
+{
+    margin-left:25%;
 }
 .memoria
 {
-    width:50%;
+    width: 400px;
+    background-color: #3663f4;
+    height: 280px;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top:5px;
+    border-radius: 5%;
+
 }
 .btnJugar
 {
     margin:0 auto;
     background-color: red;
     border: 2px solid white;
-    padding: 5px;
+    padding: 10px;
     border-radius: 40% 40%;
     font-size: 1.6em;
     width: 100px;
     color: white;
     outline:none;
-    height: 20%;
+
     font-family: 'Luckiest Guy', cursive;
 
+}
+.btnAdivina
+{
+    border: 2px solid black;
 }
 .btnJugar:hover
 {
@@ -66,19 +116,30 @@
 }
 .agilidad
 {
-    width: 50%;
-    background-color: #4ba5a5;
-    height: 300px;
+    width: 400px;
+    background-color: #3cf436;
+    height: 280px;
     position: relative;
-   
+
     display: flex;
     justify-content: center;
     flex-direction: column;
-    
+    margin-top:10px;
     border-radius: 5%;
-    float:left;
+
+}
+.agilidad h2
+{
+    text-align:center;
+    font-family: 'Luckiest Guy', cursive;
 }
 .agilidad img
+{
+   
+ margin-left:25%;
+}
+
+.memoria img
 {
     margin: 5% auto;
 }

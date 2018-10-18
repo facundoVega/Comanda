@@ -1,14 +1,14 @@
 
 <div class="contenidoInicial">
-  <mat-toolbar style="background-color:#183c54; border-bottom:5px solid white; position: relative;">
+  <mat-toolbar style="background-color:#183c54; position: relative;">
 
 
-    <mat-toolbar-row style="height:108px;">
+    <mat-toolbar-row style="height:75px;">
       <span class="tituloInicial" >Sal&oacute;n de juegos</span>
-      <span class="menu" ><a routerLink="juegos">Juegos</a></span>
+      <span class="menu" ><a class="ruta" routerLink="juegos" routerLinkActive="activa">Juegos</a></span>
       <span class="menu">Puntajes</span>
       <span class="menu">Ranking</span>
-     
+      <button class="salir" (click)="salir()" mat-raised-button color="warn">Salir</button>
     </mat-toolbar-row>
   </mat-toolbar>
   <router-outlet></router-outlet>

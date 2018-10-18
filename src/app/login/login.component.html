@@ -5,9 +5,9 @@
       <img class="cerebro2" src="../../assets/imgs/cerebro2.png">
     <h1>Iniciar Sesi&oacute;n</h1>
  
-      <input type="text" placeholder="Usuario">
-      <input type="password" placeholder="contraseña">
-      <button class="Login" (click)="irAPrincipal()">¡Entrar!</button>
+      <input type="text" [(ngModel)]="correoLogin" placeholder="Usuario" name="userLogin">
+      <input type="password" [(ngModel)]="passLogin" placeholder="contraseña">
+      <button class="Login" (click)="Loguear()">¡Entrar!</button>
   
   </div>
 </div>
@@ -18,10 +18,10 @@
         <img class="cerebro2" src="../../assets/imgs/cerebro3.png">
       <h1>Registrarse</h1>
    
-        <input type="text" placeholder="Usuario">
-        <input type="text" placeholder="Nombre de usuario">
-        <input type="password" placeholder="contraseña">
-        <button class="Login" (click)="irAPrincipal()" >¡Crear perfil!</button>
+        <input type="text" [(ngModel)]="correoReg" placeholder="Usuario">
+        <input type="text" [(ngModel)]="nombreReg" placeholder="Nombre de usuario">
+        <input type="password" [(ngModel)]="passReg" placeholder="contraseña">
+        <button class="Login" (click)="Registrar()" >¡Crear perfil!</button>
     
     </div>
   </div>
