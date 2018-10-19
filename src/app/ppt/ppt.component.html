@@ -11,12 +11,12 @@
   *Cada vez que gane una jugada se le sumaran 10 puntos
 </p>
 <p>
-  !Son tres jugadas por juego!
+  !Son tres jugadas por partida!
 </p>
 
   </div >
   <div class="juego">
-      <div class="miAlert" [class.mostrar]="mostrarAlert">
+      <div class="miAlert" >
           <div class="alert">
               <h1>{{mensaje}}</h1>
           </div>
@@ -25,6 +25,9 @@
     <h1 class="tituloJuego">¡Piedra, papel o tijera!</h1>
     <div class="juegoPc">
         <img class="pregunta" [src]="fotoMostrar" width="150px" height="150px">
+        <div class="alert" [class.mostrar]="mostrarAlert">
+          <h1>{{mensaje}}</h1>
+      </div>
     </div>
     <div class="juegoUser">
     <img (click)="jugo('papel')" class="jugadaPapel" [class.activa]="activaPapel" src="../../assets/imgs/papel.png" width="150px" height="150px">

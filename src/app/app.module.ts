@@ -15,6 +15,10 @@ import { FormsModule } from '@angular/forms';
 import { JuegosComponent } from './juegos/juegos.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PptComponent } from './ppt/ppt.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MemoriaComponent } from './memoria/memoria.component';
+import { AdivinaComponent } from './adivina/adivina.component';
+import { AgilidadComponent } from './agilidad/agilidad.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +30,13 @@ import { PptComponent } from './ppt/ppt.component';
 
     NotFoundComponent,
 
-    PptComponent
+    PptComponent,
+
+    MemoriaComponent,
+
+    AdivinaComponent,
+
+    AgilidadComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +44,8 @@ import { PptComponent } from './ppt/ppt.component';
     BrowserAnimationsModule,
     MyOwnCustomMaterialModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    LayoutModule
   ],
   providers: [
 

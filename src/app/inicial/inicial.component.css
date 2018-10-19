@@ -1,10 +1,10 @@
 .example-icon {
-    padding: 0 14px;
-  }
-  
-  .example-spacer {
-    flex: 1 1 auto;
-  }
+  padding: 0 40px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
   @import url('https://fonts.googleapis.com/css?family=Fascinate+Inline');
   @import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
 
@@ -12,15 +12,49 @@
   .tituloInicial
   {
     font-family: 'Fascinate Inline', cursive!important;
-    font-size:1.7em;
-    margin-right: 20%;
-    color:white;
+    font-size: 2em;
+    
+    color: white;
+   
   }
   .example-spacer
   {
       margin-right: 5%;
   }
+ .btnMenu
+ {
+  
  
+  background-size: 100% 100%;
+ font-size:3em;
+  position: absolute;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  top: 1%;
+  right: 1%;
+  font-family: 'Fascinate Inline', cursive!important;
+  display:none;
+  color:white;
+ }
+ .btnMenu:hover
+ {
+    cursor: pointer;
+    color:pink;
+
+ 
+ 
+ }
+.link
+{
+  text-decoration:none;
+  color:black;
+}
+ .menuResp
+  {
+    width:200px;
+    background-color: orangered!important;
+ }
   .menu
   {
       margin-right: 3%;
@@ -36,10 +70,48 @@
   {
     text-decoration: none;
     color:white;
+    font-family: 'Luckiest Guy', cursive;
+    color:white;
+    font-size:1em;
+  }
+  .cabecera
+  {
+    width: 100%;
+    height: 15%;
+    background-color: #183c54;
+    box-sizing: border-box;
+  }
+  .rutas
+  {
+    float: left;
+
+    width: 100%;
+    box-sizing: border-box;
+    list-style-type: none;
+    margin-top: 20px;
+   
+  }
+  .ruta1
+  {
+    margin-left:20%;
+  }
+  .rutas li
+  {
+    
+    color: white;
+    float: left;
+    /* width: 36%; */
+    margin-right: 5%;
+    
+  }
+  .rutas li a{
+    font-size:1.2em;
+    text-decoration: none;
+    color:white;
   }
   .activa
   {
-    color:pink;
+    color:pink!important;
   }
   .contenidoInicial
   {
@@ -54,7 +126,32 @@
     justify-content: end;
     position: relative;
     right: 0px;
-    margin-left: 200px;
+
     font-family: 'Luckiest Guy', cursive;
     letter-spacing: 1px;
   }
+
+  .responsiveRuta
+  {
+    margin-left:0%;
+  }
+  @media (max-width: 1150px)
+{
+  .ruta1
+  {
+    margin-left:0%;
+  }
+  
+}
+
+@media (max-width: 850px)
+{
+  .ruta
+  {
+    display:none;
+  }
+  .btnMenu
+  {
+    display:block;
+  }
+}

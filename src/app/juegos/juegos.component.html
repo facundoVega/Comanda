@@ -2,25 +2,25 @@
   <div class="fila1">
   <div class="piedra">
       <h2>¡Piedra, papel o tijera!</h2>
-    <img src="../../assets/imgs/papel.jpg"  width="50%" height="50%">
+    <img src="../../assets/imgs/papel.jpg"  >
    
     <button (click)="irAPpt()"  class="btnJugar">Jugar</button>
     </div>
     <div class="memoria">
         <img src="../../assets/imgs/memoria.png"  width="50%" height="50%">
-        <button  class="btnJugar">Jugar</button>
+        <button  (click)="irAMemoria()" class="btnJugar">Jugar</button>
     </div>
     </div>
     <div class="fila2">
     <div class="adivina">
               <h2>Adivina el numero!</h2>
-              <img src="../../assets/imgs/adivina.jpg"  width="50%" height="50%">
-              <button  class="btnJugar btnAdivina">Jugar</button>
+              <img src="../../assets/imgs/adivina.jpg" >
+              <button (click)="irAAdivina()" class="btnJugar btnAdivina">Jugar</button>
             </div>
             <div class="agilidad">
                 <h2>agilidad Aritm&eacute;tica</h2>
-                <img src="../../assets/imgs/agilidad.png"  width="50%" height="50%">
-                <button  class="btnJugar btnAdivina">Jugar</button>
+                <img src="../../assets/imgs/agilidad.png"  >
+                <button (click)="irAAgilidad()" class="btnJugar btnAdivina">Jugar</button>
             </div>
           </div>
         </div>

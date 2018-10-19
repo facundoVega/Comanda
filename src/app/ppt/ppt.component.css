@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Anton');
 @import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
 @import url('https://fonts.googleapis.com/css?family=Fascinate+Inline');
+
+*, body{
+
+    box-sizing: border-box;
+
+}
 .contenido
 {
     width: 100%;
-    height: 100%;
-    margin-top: -75px;
+    height: 85%;
+  
     display:flex;
 
    
@@ -16,7 +22,7 @@
     width:30%;
     height: 100%;
     background-color:#f44336;
-    padding-top:75px;
+ 
     padding-left:15px;
     
 }
@@ -41,7 +47,7 @@
     align-content: center;
     flex-direction: column;
     text-align: center;
-    padding-top:75px;
+    box-sizing: border-box;
     background-color: #3488c0;
 }
 .juegoPc
@@ -67,16 +73,19 @@
     padding-right: 20px;
     border-radius: 10%;
     background: white;
+    box-sizing: border-box;
 }
 .jugadaPiedra
 {
     border:5px solid blue;
     border-radius:10%;
     background-color: white;
+    box-sizing: border-box;
 }
 .jugadaPiedra:hover
 { cursor: pointer;
     border:8px solid blue;
+
 
 }
 .jugadaTijera
@@ -84,6 +93,7 @@
     border:5px solid orangered;
     border-radius:10%;
     background-color: white;
+    box-sizing: border-box;
 }
 .tituloJuego
 {
@@ -98,6 +108,7 @@
 
     border:8px solid red;
     transition: .3s;
+    box-sizing: border-box;
 }
 .jugadaTijera:hover
 {
@@ -115,8 +126,9 @@
 }
 .activa
 {
-    height: 200px;
-    width:200px;
+    height: 170px;
+    width:170px;
+    box-sizing: border-box;
 }
 .miAlert
 {
@@ -140,6 +152,7 @@
     border-radius: 13%;
     right: 0%;
     top: 150px;
+    display:none;
 }
 .alert h1
 {
@@ -153,4 +166,15 @@
 .mostrar
 {
     display:block;
+}
+@media (max-width: 680px)
+{
+  .instrucciones
+  {
+      display:none;
+  }
+  .juego
+  {
+      width:100%;
+  }
 }

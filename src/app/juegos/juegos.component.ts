@@ -17,4 +17,16 @@ export class JuegosComponent implements OnInit {
     location.href="./Inicial/ppt";
    
   }
+  irAMemoria()
+  {
+    location.href="./Inicial/memoria";
+  }
+  irAAdivina()
+  {
+    location.href="./Inicial/adivina";
+  }
+  irAAgilidad()
+  {
+    location.href="./Inicial/agilidad";
+  }
 }

@@ -18,4 +18,5 @@ body
 $custom-typography: mat-typography-config(
     $font-family:  'Fascinate Inline','Luckiest Guy'
 )
-@include mat-core($custom-typography);
+@include mat-core($custom-typography); 
+

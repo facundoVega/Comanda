@@ -1,6 +1,6 @@
 
 <div class="contenidoInicial">
-  <mat-toolbar style="background-color:#183c54; position: relative;">
+  <!--mat-toolbar style="background-color:#183c54; position: relative;">
 
 
     <mat-toolbar-row style="height:75px;">
@@ -10,6 +10,24 @@
       <span class="menu">Ranking</span>
       <button class="salir" (click)="salir()" mat-raised-button color="warn">Salir</button>
     </mat-toolbar-row>
-  </mat-toolbar>
+  </mat-toolbar-->
+
+  <div class="cabecera">
+      
+      <ul class="rutas">
+        <li ><span class="tituloInicial" >Sal&oacute;n de juegos</span></li>
+        <li class="ruta ruta1" [class.responsiveRuta]="setearMargen"><a  routerLink="juegos" routerLinkActive="activa">Juegos</a></li>
+        <li class="ruta"><a  routerLinkActive="activa">Puntajes</a></li>
+        <li class="ruta"><a   routerLinkActive="activa">Ranking</a></li>
+        <li class="ruta"><button class="salir" (click)="salir()" mat-raised-button color="warn">Salir</button></li>
+      </ul>
+     <button  [matMenuTriggerFor]="menu" class="btnMenu">&#9776;</button>
+     <mat-menu #menu="matMenu" style="background-color:red">
+      <button mat-menu-item style="font-family: 'Luckiest Guy', cursive;"><a  routerLink="juegos" class="link">Juegos</a></button>
+      <button mat-menu-item style="font-family: 'Luckiest Guy', cursive;">Puntajes</button>
+      <button mat-menu-item style="font-family: 'Luckiest Guy', cursive;">Ranking</button>
+      <button mat-menu-item style="font-family: 'Luckiest Guy', cursive;">Salir</button>
+    </mat-menu>
+  </div>
   <router-outlet></router-outlet>
 </div>
