@@ -45,6 +45,7 @@
     text-align: center;
     box-sizing: border-box;
     background-color: #3488c0;
+    position:relative;
 }
 .cerebro2
 {
@@ -110,4 +111,112 @@
     cursor:pointer;
     background-color: red;
     transition: .5s;
+}
+.animacion
+{
+    animation:shake 1s 1 ease-in-out;
+}
+
+@-webkit-keyframes shake {
+    from,
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      -webkit-transform: translate3d(-10px, 0, 0);
+      transform: translate3d(-10px, 0, 0);
+    }
+  
+    20%,
+    40%,
+    60%,
+    80% {
+      -webkit-transform: translate3d(10px, 0, 0);
+      transform: translate3d(10px, 0, 0);
+    }
+  }
+  
+  @keyframes shake {
+    from,
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      -webkit-transform: translate3d(-10px, 0, 0);
+      transform: translate3d(-10px, 0, 0);
+    }
+  
+    20%,
+    40%,
+    60%,
+    80% {
+      -webkit-transform: translate3d(10px, 0, 0);
+      transform: translate3d(10px, 0, 0);
+    }
+  }
+  
+  .shake {
+    -webkit-animation-name: shake;
+    animation-name: shake;
+  }
+  .tiempo
+  {
+    position: absolute;
+    font-size: 1.5em;
+    top: 4%;
+    color: pink;
+    text-shadow: 2px 2px black;
+    left: 5%;
+    font-family: 'Luckiest Guy', cursive;
+    display: none;
+  }
+  .jugar
+  {
+    position: absolute;
+    font-size: 1.5em;
+    top: 1%;
+    display: none;
+    left: 5%;
+    font-family: 'Luckiest Guy', cursive;
+  }
+  .taparJuego
+  {
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    height: 69%;
+    box-sizing: border-box;
+    margin-top: 9%;
+    display:none;
+  }
+  .activarTaparJuego
+  {
+      display:block;
+  }
+  .mostrar
+  {
+    display:block;
+  }
+  @media (max-width: 680px)
+{
+  .instrucciones
+  {
+      display:none;
+  }
+  .juego
+  {
+      width:100%;
+  }
 }

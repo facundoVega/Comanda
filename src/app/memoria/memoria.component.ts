@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Z_DEFAULT_STRATEGY } from 'zlib';
 
 @Component({
   selector: 'app-memoria',
@@ -6,65 +7,175 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./memoria.component.css']
 })
 export class MemoriaComponent implements OnInit {
-/*imgMostrar1:string;
-imgMostrar2:string;
-imgMostrar3:string;
-imgMostrar4:string;
-imgMostrar5:string;
-imgMostrar6:string;
-imgMostrar7:string;
-imgMostrar8:string;
-imgMostrar9:string;
-imgMostrar10:string;
-imgMostrar11:string;
-imgMostrar12:string;
-imgMostrar13:string;
-imgMostrar14:string;
-imgMostrar15:string;
-imgMostrar16:string;*/
-imgMostrar:string[]=[];
 
+  countdown:any;
+animacion:any[]=[];
+primerId;
+ocultarBoton:boolean;
+ocultarTiempo:boolean;
+imgMostrar:any[]=[];
+valorViejo;
+contadorJugadas:number=0;
+fotos:any[]=[];
+coincide:boolean=false;
+claveActual;
+tiempo="";
 
-fotos:string[]=[];
+taparJuego:boolean;
+  constructor(){
+    this.taparJuego=true;
+    this.ocultarBoton = true;
+    this.ocultarTiempo=false;
+      for(let i=0;i<16;i++)
+      { 
+        this.imgMostrar.push({img:"../../assets/imgs/cerebro2.png", ok:true});
+        this.animacion.push(false);
 
-  constructor() {
-    for(let i=0;i<16;i++)
-    { 
-      this.imgMostrar.push("../../assets/imgs/cerebro2.png");
-
-    }
+      }
  
 
 
-    this.fotos.push("../../assets/imgs/bart1.png");
-    this.fotos.push("../../assets/imgs/bart2.jpg");
-    this.fotos.push("../../assets/imgs/familia2.jpg");
-    this.fotos.push("../../assets/imgs/familia.jpg");
-    this.fotos.push("../../assets/imgs/homero.png");
-    this.fotos.push("../../assets/imgs/genio.jpg");
-    this.fotos.push("../../assets/imgs/maggie.jpg");
-    this.fotos.push("../../assets/imgs/burns.jpg");
+      this.fotos.push({img:"../../assets/imgs/bart1.png", clave:1, id:1});
+      this.fotos.push({img:"../../assets/imgs/bart2.jpg", clave:2, id:2});
+      this.fotos.push({img:"../../assets/imgs/familia2.jpg", clave:3, id:3});
+      this.fotos.push({img:"../../assets/imgs/familia.jpg", clave:4, id:4});
+      this.fotos.push({img:"../../assets/imgs/homero.png", clave:5, id:5});
+      this.fotos.push({img:"../../assets/imgs/genio.jpg", clave:6, id:6});
+      this.fotos.push({img:"../../assets/imgs/maggie.jpg", clave:7, id:7});
+      this.fotos.push({img:"../../assets/imgs/burns.jpg", clave:8, id:8});
+      this.fotos.push({img:"../../assets/imgs/bart1.png", clave:1, id:9});
+      this.fotos.push({img:"../../assets/imgs/bart2.jpg", clave:2, id:10});
+      this.fotos.push({img:"../../assets/imgs/familia2.jpg", clave:3, id:11});
+      this.fotos.push({img:"../../assets/imgs/familia.jpg", clave:4, id:12});
+      this.fotos.push({img:"../../assets/imgs/homero.png", clave:5, id:13});
+      this.fotos.push({img:"../../assets/imgs/genio.jpg", clave:6, id:14});
+      this.fotos.push({img:"../../assets/imgs/maggie.jpg", clave:7, id:15});
+      this.fotos.push({img:"../../assets/imgs/burns.jpg", clave:8, id:16 });
+  
+  
+      this. fotos = this.fotos.sort(function() {return Math.random() - 0.5});
+     
+   
+  }
 
-    this. fotos = this.fotos.sort(function() {return Math.random() - 0.5});
-   }
+Jugar()
+{
+  this. fotos = this.fotos.sort(function() {return Math.random() - 0.5});
+     
+  for(let i=0;i<16;i++)
+  { 
+    this.imgMostrar[i]={img:"../../assets/imgs/cerebro2.png", ok:true};
+    
 
-  ngOnInit() {
+  }
+  let tope = new Date().getTime();
+  tope=tope +10*1000;
+  this.taparJuego=false;
+  var countDownDate = new Date(tope).getTime();
+  this.ocultarBoton=false;
+  this.ocultarTiempo=true;
+  var x = setInterval(()=> {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  this.tiempo =minutes+":"+seconds;
+  
+
+if (distance < 0) {
+  clearInterval(x);
+ this.tiempo ="Juego finalizado";
+ this.ocultarTiempo=false;
+ this.ocultarBoton=true;
+ this.taparJuego=true;
+}
+}
+} ngOnInit() {
   }
 
   cambiarImagen(valor)
   {
-    let imgMostrar="imgMostrar"+valor;
-  
+    
     valor = parseInt(valor);
     valor = valor-1;
-    if(valor>7)
+    let imgMostrar="imgMostrar"+valor;
+  
+    if(this.imgMostrar[valor].ok ==false)
     {
-      let valor2= valor-8;
-      this.imgMostrar[valor] =this.fotos[valor2];
-      return
+      return;
     }
    
    
-    this.imgMostrar[valor] =this.fotos[valor];
+  
+      this.imgMostrar[valor].img =this.fotos[valor].img;
+
+  
+   
+     
+    
+   this.contadorJugadas = this.contadorJugadas +1;
+    if(this.contadorJugadas==1)
+    {
+
+      this.valorViejo=valor;
+      this.primerId = this.fotos[valor].id;
+  this.claveActual=this.fotos[valor].clave;
+    }
+  
+    if(this.contadorJugadas ==2)
+    {
+      if(this.primerId == this.fotos[valor].id)
+      {
+        this.contadorJugadas=1;
+        return;
+      }
+    
+        if(this.claveActual == this.fotos[valor].clave)
+        {
+          
+          this.claveActual="";
+          this.coincide=true;
+          this.imgMostrar[this.valorViejo].ok=false;
+          this.imgMostrar[valor].ok=false;
+          this.animacion[valor]=true;
+          this.animacion[this.valorViejo]=true;
+        }
+        else
+        {
+         
+          this.claveActual="";
+        }
+      this.contadorJugadas=0;
+        this.taparJuego=true;
+      setTimeout( ()=>{
+        for(let i=0;i<16;i++)
+        { 
+          
+          if(this.imgMostrar[i].ok==false)
+          {
+            this.imgMostrar[i].img="../../assets/imgs/ok.png";
+          }
+          else
+          {
+            this.imgMostrar[i].img="../../assets/imgs/cerebro2.png";
+          }
+              
+          this.taparJuego=false;
+           
+          
+          
+        
+        
+        }
+      }, 1000);
+      
+    }
   }
 }

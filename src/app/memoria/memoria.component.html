@@ -3,45 +3,47 @@
       <img class="cerebro2" src="../../assets/imgs/cerebro3.png">
     <h2>Instrucciones</h2>
 
-<p>* Seleccione una de las tres imagenes</p>
-  <p>Al momento de clickear la imagen</p> 
- <p>se develara la jugada de la computadora.</p> 
+<p>*Cl&aacute;sico juego de la memoria</p>
+  <p>Presione sobre un bot&oacute;n y luego encuentre</p> 
+ <p>la imagen repetida.</p> 
 <p>
-  *Cada vez que gane una jugada se le sumaran 10 puntos
+  *Cada vez que encuentra la imagen repetida se le sumaran 10pts
 </p>
 <p>
-  !Son tres jugadas por partida!
+  ¡tiene 3 min Aprovechelos!
 </p>
 
   </div >
+  <div class="taparJuego" [class.activarTaparJuego]="taparJuego">
+  </div>
   <div class="juego">
-    <h2 class="tituloJuego">¡Juego de la memoria!</h2>
+    <h2 class="tituloJuego">¡Juego de la memoria!</h2><h3 class="tiempo" [class.mostrar]="ocultarTiempo">{{tiempo}}</h3><button class="jugar" [class.mostrar]="ocultarBoton" (click)="Jugar()" mat-raised-button color="warn">Jugar</button>
     <div class="fila1">
-      <img [src]="imgMostrar[0]" (click)="cambiarImagen('1')" width="20%" height="90%">
-      <img [src]="imgMostrar[1]"  (click)="cambiarImagen('2')" width="20%" height="90%">
-      <img [src]="imgMostrar[2]" (click)="cambiarImagen('3')" width="20%" height="90%">
-      <img [src]="imgMostrar[3]" (click)="cambiarImagen('4')"  width="20%" height="90%">
+      <img [src]="imgMostrar[0].img" [class.animacion]="animacion[0]" (click)="cambiarImagen('1')" width="20%" height="90%">
+      <img [src]="imgMostrar[1].img"  [class.animacion]="animacion[1]" (click)="cambiarImagen('2')" width="20%" height="90%">
+      <img [src]="imgMostrar[2].img" [class.animacion]="animacion[2]" (click)="cambiarImagen('3')" width="20%" height="90%">
+      <img [src]="imgMostrar[3].img" [class.animacion]="animacion[3]" (click)="cambiarImagen('4')"  width="20%" height="90%">
     </div>
     <div class="fila2">
-      <img [src]="imgMostrar[4]" (click)="cambiarImagen('5')" width="20%" height="90%">
-      <img [src]="imgMostrar[5]" (click)="cambiarImagen('6')" width="20%" height="90%">
-      <img [src]="imgMostrar[6]" (click)="cambiarImagen('7')" width="20%" height="90%">
-      <img [src]="imgMostrar[7]" (click)="cambiarImagen('7')" width="20%" height="90%">
+      <img [src]="imgMostrar[4].img" [class.animacion]="animacion[4]" (click)="cambiarImagen('5')" width="20%" height="90%">
+      <img [src]="imgMostrar[5].img" [class.animacion]="animacion[5]" (click)="cambiarImagen('6')" width="20%" height="90%">
+      <img [src]="imgMostrar[6].img" [class.animacion]="animacion[6]" (click)="cambiarImagen('7')" width="20%" height="90%">
+      <img [src]="imgMostrar[7].img" [class.animacion]="animacion[7]" (click)="cambiarImagen('8')" width="20%" height="90%">
       
 
     </div>
     <div class="fila3">
-      <img [src]="imgMostrar[8]"  (click)="cambiarImagen('9')" width="20%" height="90%">
-      <img [src]="imgMostrar[9]"  (click)="cambiarImagen('10')" width="20%" height="90%">
-      <img [src]="imgMostrar[10]" (click)="cambiarImagen('11')" width="20%" height="90%">
-      <img [src]="imgMostrar[11]" (click)="cambiarImagen('12')" width="20%" height="90%">
+      <img [src]="imgMostrar[8].img"  [class.animacion]="animacion[8]" (click)="cambiarImagen('9')" width="20%" height="90%">
+      <img [src]="imgMostrar[9].img"  [class.animacion]="animacion[9]" (click)="cambiarImagen('10')" width="20%" height="90%">
+      <img [src]="imgMostrar[10].img" [class.animacion]="animacion[10]" (click)="cambiarImagen('11')" width="20%" height="90%">
+      <img [src]="imgMostrar[11].img" [class.animacion]="animacion[11]" (click)="cambiarImagen('12')" width="20%" height="90%">
 
     </div>
     <div class="fila4">
-      <img [src]="imgMostrar[12]"  (click)="cambiarImagen('13')"width="20%" height="90%">
-      <img [src]="imgMostrar[13]" (click)="cambiarImagen('14')" width="20%" height="90%">
-      <img [src]="imgMostrar[14]" (click)="cambiarImagen('15')" width="20%" height="90%">
-      <img [src]="imgMostrar[15]" (click)="cambiarImagen('16')" width="20%" height="90%">
+      <img [src]="imgMostrar[12].img" [class.animacion]="animacion[12]" (click)="cambiarImagen('13')"width="20%" height="90%">
+      <img [src]="imgMostrar[13].img" [class.animacion]="animacion[13]" (click)="cambiarImagen('14')" width="20%" height="90%">
+      <img [src]="imgMostrar[14].img" [class.animacion]="animacion[14]" (click)="cambiarImagen('15')" width="20%" height="90%">
+      <img [src]="imgMostrar[15].img" [class.animacion]="animacion[15]"  (click)="cambiarImagen('16')" width="20%" height="90%">
 
     </div>
   </div>
