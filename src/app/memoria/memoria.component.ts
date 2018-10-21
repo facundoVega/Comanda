@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Z_DEFAULT_STRATEGY } from 'zlib';
 
 @Component({
   selector: 'app-memoria',
@@ -8,7 +7,9 @@ import { Z_DEFAULT_STRATEGY } from 'zlib';
 })
 export class MemoriaComponent implements OnInit {
 
+  mostrarPuntajeFinal:boolean;
   countdown:any;
+ x:any;
 animacion:any[]=[];
 primerId;
 ocultarBoton:boolean;
@@ -20,12 +21,14 @@ fotos:any[]=[];
 coincide:boolean=false;
 claveActual;
 tiempo="";
-
+puntos:number;
 taparJuego:boolean;
   constructor(){
+    this.puntos=0;
     this.taparJuego=true;
     this.ocultarBoton = true;
     this.ocultarTiempo=false;
+    this.mostrarPuntajeFinal =true;
       for(let i=0;i<16;i++)
       { 
         this.imgMostrar.push({img:"../../assets/imgs/cerebro2.png", ok:true});
@@ -62,19 +65,14 @@ Jugar()
 {
   this. fotos = this.fotos.sort(function() {return Math.random() - 0.5});
      
-  for(let i=0;i<16;i++)
-  { 
-    this.imgMostrar[i]={img:"../../assets/imgs/cerebro2.png", ok:true};
-    
-
-  }
+  
   let tope = new Date().getTime();
-  tope=tope +10*1000;
+  tope=tope +180*1000;
   this.taparJuego=false;
   var countDownDate = new Date(tope).getTime();
   this.ocultarBoton=false;
   this.ocultarTiempo=true;
-  var x = setInterval(()=> {
+  this.x = setInterval(()=> {
 
   // Get todays date and time
   var now = new Date().getTime();
@@ -90,14 +88,53 @@ Jugar()
   
 
 if (distance < 0) {
-  clearInterval(x);
+  clearInterval(this.x);
  this.tiempo ="Juego finalizado";
  this.ocultarTiempo=false;
  this.ocultarBoton=true;
  this.taparJuego=true;
+ this.puntos=0;
+ for(let i=0;i<16;i++)
+  { 
+    this.imgMostrar[i]={img:"../../assets/imgs/cerebro2.png", ok:true};
+    
+
+  }
+  this.mostrarPuntajeFinal =false;
+  setTimeout( ()=>{
+   this.mostrarPuntajeFinal = true;
+       }
+  , 3000);
 }
+});
 }
-} ngOnInit() {
+
+ ngOnInit() {
+  }
+
+  IniciarJuego()
+  {
+    clearInterval(this.x);
+    this.tiempo ="Juego finalizado";
+    this.ocultarTiempo=false;
+    this.ocultarBoton=true;
+   
+  
+   
+    for(let i=0;i<16;i++)
+     { 
+       this.imgMostrar[i]={img:"../../assets/imgs/cerebro2.png", ok:true};
+       this.animacion[i]=false;
+   
+     }
+     this.mostrarPuntajeFinal =false;
+     setTimeout( ()=>{
+      this.mostrarPuntajeFinal = true;
+      this.puntos=0;
+      this.taparJuego=true;
+          }
+     , 3000); 
+   
   }
 
   cambiarImagen(valor)
@@ -146,6 +183,11 @@ if (distance < 0) {
           this.imgMostrar[valor].ok=false;
           this.animacion[valor]=true;
           this.animacion[this.valorViejo]=true;
+          this.puntos = this.puntos+10;
+          if(this.puntos==80)
+          {
+            this.IniciarJuego();
+          }
         }
         else
         {

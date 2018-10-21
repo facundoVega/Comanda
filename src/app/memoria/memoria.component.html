@@ -1,3 +1,10 @@
+
+<div class="puntaje" [class.mostrarPuntajeFinal]="mostrarPuntajeFinal">
+  <div class="elPuntaje">
+      <img  src="../../assets/imgs/cerebro.png" >
+    <h1>Su puntaje fue de:{{puntos}}</h1>
+    </div>
+</div>
 <div class="contenido">
   <div class="instrucciones">
       <img class="cerebro2" src="../../assets/imgs/cerebro3.png">
@@ -17,7 +24,8 @@
   <div class="taparJuego" [class.activarTaparJuego]="taparJuego">
   </div>
   <div class="juego">
-    <h2 class="tituloJuego">¡Juego de la memoria!</h2><h3 class="tiempo" [class.mostrar]="ocultarTiempo">{{tiempo}}</h3><button class="jugar" [class.mostrar]="ocultarBoton" (click)="Jugar()" mat-raised-button color="warn">Jugar</button>
+    <h2 class="tituloJuego">¡Juego de la memoria!</h2><h3 class="tiempo" [class.mostrar]="ocultarTiempo">{{tiempo}}</h3><button class="jugar" [class.mostrar]="ocultarBoton" (click)="Jugar()" >Jugar</button>
+    <span class="puntos">Pts:{{puntos}}</span>
     <div class="fila1">
       <img [src]="imgMostrar[0].img" [class.animacion]="animacion[0]" (click)="cambiarImagen('1')" width="20%" height="90%">
       <img [src]="imgMostrar[1].img"  [class.animacion]="animacion[1]" (click)="cambiarImagen('2')" width="20%" height="90%">

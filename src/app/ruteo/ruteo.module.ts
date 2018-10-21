@@ -11,17 +11,20 @@ import { AdivinaComponent} from '../adivina/adivina.component';
 import { AgilidadComponent} from '../agilidad/agilidad.component';
 import { MemoriaComponent} from '../memoria/memoria.component';
 
-/*const rutas: Routes = [
+const rutas: Routes = [
   { path: "", component: LoginComponent },
 
   { path: "Inicial", component: InicialComponent, canActivate: [ValidadoraService], children:[
     {path:"juegos", component:JuegosComponent, canActivate: [ValidadoraService]},
-    {path:"ppt", component:PptComponent, canActivate: [ValidadoraService] }
+    {path:"ppt", component:PptComponent, canActivate: [ValidadoraService] },
+    {path:"agilidad", component:AgilidadComponent},
+    {path:"memoria", component:MemoriaComponent},
+    {path:"adivina", component:AdivinaComponent}
     ]},
     { path: "**", component: NotFoundComponent }
-];*/
+];
 
-const rutas: Routes = [
+/*const rutas: Routes = [
   { path: "", component: InicialComponent },
 
   { path: "Inicial", component: InicialComponent, children:[
@@ -32,7 +35,7 @@ const rutas: Routes = [
     {path:"adivina", component:AdivinaComponent}
   ]},
     { path: "**", component: NotFoundComponent }
-];
+];*/
 
 
 @NgModule({
