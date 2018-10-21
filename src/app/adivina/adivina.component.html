@@ -1,21 +1,50 @@
+
+
+<div class="puntaje" [class.mostrarPuntajeFinal]="mostrarPuntajeFinal">
+    <div class="elPuntaje">
+        <img  src="../../assets/imgs/cerebro.png" >
+      <h1>{{mensajeFinal}}</h1>
+      </div>
+  </div>
+
 <div class="contenido">
   <div class="instrucciones">
       <img class="cerebro2" src="../../assets/imgs/cerebro3.png">
     <h2>Instrucciones</h2>
 
-<p>* Seleccione una de las tres imagenes</p>
-  <p>Al momento de clickear la imagen</p> 
- <p>se develara la jugada de la computadora.</p> 
-<p>
-  *Cada vez que gane una jugada se le sumaran 10 puntos
+<p>* Debe adivinar el n&uacute;mero secreto (esta entre 1 y 20)</p>
+  <p>*Tiene 5 intentos y empieza con 50 puntos</p> 
+ <p>*Con cada intento fallido se le restatan 10 pts.</p> 
+<p>*No hay limite de tiempo asi que tomese su tiempo para pensar.
+  
 </p>
 <p>
-  !Son tres jugadas por partida!
+  ¡Cuenta con la ayuda de nuestro anfitri&oacute;n, aprov&eacute;chelo!
 </p>
 
   </div >
-  <div class="juego">
-    
 
-  </div>
+  <div class="juego">
+      <div class="taparJuego" [class.activarTaparJuego]="taparJuego"></div>
+    <h2 class="tituloJuego">¡Adivina el numero!</h2><h3 class="tiempo" [class.mostrar]="ocultarTiempo">{{tiempo}}</h3><button class="jugar" [class.mostrar]="ocultarBoton" (click)="JugarJuego()" >Jugar</button>
+
+    <span class="puntos">Pts:{{puntos}}</span>
+    <div class="computadora">
+      
+      <div class="laAyuda">
+          <img class="anfi" src="../../assets/imgs/cerebro3.png">
+          <div class="ayuda" [class.mostrarAyuda]="ayuda">
+              <h1>{{mensaje}}</h1>
+            </div>
+        </div>
+        <div class="numeroSecreto">
+          <h1>{{mensajeCaja}}</h1>
+        </div>
+        <div class="user">
+          <button class="jugada" [class.mostrar]="ocultarBoton" (click)="Jugar()" >Intentar</button>
+          <input class="textIngreso" type="number" placeholder="numero" [(ngModel)]="valor" >
+    </div>
+    </div>
+    <div>
+ 
 </div>

@@ -10,7 +10,7 @@
   
     display:flex;
 
-   
+   position: relative;
 
 }
 .instrucciones
@@ -45,6 +45,7 @@
     text-align: center;
     box-sizing: border-box;
     background-color: #3488c0;
+    position:relative;
 }
 .cerebro2
 {
@@ -53,3 +54,286 @@
     margin-left: 16%;
     margin-top: 15px;
 }
+.tituloJuego
+{
+   
+    text-align: center;
+    font-family: 'Fascinate Inline', cursive!important;
+    color:white;
+}
+.tiempo
+  {
+    position: absolute;
+    font-size: 1.5em;
+    top: 4%;
+    color: pink;
+    text-shadow: 2px 2px black;
+    left: 5%;
+    font-family: 'Luckiest Guy', cursive;
+    display: none;
+  }
+  .puntos
+  {
+    position: absolute;
+    font-size: 1.5em;
+    top: 8%;
+    color: pink;
+    text-shadow: 2px 2px black;
+    right: 5%;
+    font-family: 'Luckiest Guy', cursive;
+  }
+  .jugar
+  {
+   
+    background-color: red;
+    border: 2px solid white;
+    padding: 2px;
+    border-radius: 40% 40%;
+    font-size: 1.6em;
+    width: 100px;
+    display:none;
+    position:absolute;
+    z-index:1000;
+    top:0;
+    left:0;
+    color: white;
+    outline: none;
+    font-family: 'Luckiest Guy', cursive;
+  }
+  .laAyuda
+  {
+  
+    position: relative;
+  }    
+.anfi
+{
+    width: 150px;
+    height: 150px;
+    
+}
+.ayuda
+{
+  
+    background-image: url("../../assets/imgs/burbuja.png");
+    top: 0;
+    z-index: 1000;
+    background: 100;
+    display:none;
+    background-size: cover;
+    background-size: 100% 100%;
+    position: absolute;
+    right: -120%;
+    width: 150%;
+    height: 70%;
+    box-sizing: border-box;
+ 
+    align-items: center;
+    justify-content: center;
+    padding-left: 20%;
+}
+.mostrarAyuda
+{
+    display:flex;
+}
+.ayuda h1
+{
+    font-size:1em;
+    font-family: 'Luckiest Guy', cursive;
+    width:80%;
+}
+  .numeroSecreto
+  {
+    border: 5px solid white;
+    width: 170px;
+    margin-top: -0.5%;
+    background-color:orangered;
+  }
+  .numeroSecreto h1
+  {
+    font-family: 'Luckiest Guy', cursive;
+  }
+  .user
+  {
+
+    width: 300px;
+    border: 5px solid orangered;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1%;
+    margin-top: 1%;
+    box-sizing: border-box;
+    background: black;
+
+  }
+  .computadora
+  {
+    width: 100%;
+    margin-top: 0%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .jugada
+  {
+    font-size: 2em;
+    padding: 5px;
+    background: orangered;
+    border: 4px solid white;
+    border-radius: 5%;
+    font-family: 'Luckiest Guy', cursive;
+    outline:none;
+  }
+  .jugada:hover
+  {
+      background:rgba(255, 68, 0, 0.507);
+        cursor:Pointer;
+    }
+  .textIngreso
+  {
+    border: 2px solid white;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    font-size: 2em;
+    color: black;
+    width: 50%;
+    background: orangered;
+    font-family: 'Luckiest Guy', cursive;
+    padding-left: 5%;
+  }
+.textIngreso::placeholder
+  {
+      color:white;
+  }
+  .puntaje
+  {
+      position:absolute;
+      z-index:1200;
+      width: 70%;
+      height: 85%;
+      display:flex;
+      text-align:center;
+      align-items:center; 
+    margin-left:30%;
+
+    justify-content: center;
+    }
+    .elPuntaje
+    {
+        box-sizing: border-box;
+        position: relative;
+        justify-content: center;
+        text-align: center;
+        margin-top: 50px;
+        background-color: #f44336;
+        width: 50%;
+
+        /* height: 50%; */
+        border: 7px solid white;
+        border-radius: 13%;
+    }
+    .elPuntaje h1
+    {
+        font-family: 'Luckiest Guy', cursive;
+        color:white;
+        letter-spacing: 1px;
+    }
+    .elPuntaje img
+    {
+        width: 60%;
+        height: 60%;
+        
+        margin-bottom: -25px;
+    }
+.mostrar
+{
+      display:block!important;
+}
+    .taparJuego
+    {
+      position: absolute;
+      z-index: 10000;
+      width: 100%;
+      height: 77%;
+      box-sizing: border-box;
+      margin-top: 70px;
+      display: none;
+        background-color: rgba(255, 0, 0, 0.301);
+      
+    }
+    .jugar
+    {
+     
+      background-color: red;
+      border: 2px solid white;
+      padding: 2px;
+      border-radius: 40% 40%;
+      font-size: 1.6em;
+      width: 100px;
+    display:none;
+      position:absolute;
+      z-index:1000;
+      top:0;
+      left:0;
+      color: white;
+      outline: none;
+      font-family: 'Luckiest Guy', cursive;
+    }
+    .jugar:hover
+    {
+        background: rgba(255, 0, 0, 0.568);
+     
+        cursor: pointer;
+    }
+    .activarTaparJuego
+    {
+        display:block;
+    }
+    .mostrarPuntajeFinal
+    {
+        display:none;
+    }
+    @media (max-width: 680px)
+    {
+      .instrucciones
+      {
+          display:none;
+      }
+      .juego
+      {
+          width:100%;
+      }
+      .taparJuego
+      {
+         /* margin-top:10%!important;*/
+      }
+      .jugar
+      {
+          font-size: 1em;
+      }
+    }
+    @media (max-width: 1150px)
+    {
+      .taparJuego
+      {
+         /* margin-top:6%;*/
+      }
+      
+    }
+    @media (max-width: 500px)
+    {
+      .ayuda{
+        width: 100%;
+        right: -70%;
+      }
+      .elPuntaje
+      {
+         width:100%;
+      }
+      .puntaje
+      {
+          margin-left:15%;
+      }
+    }

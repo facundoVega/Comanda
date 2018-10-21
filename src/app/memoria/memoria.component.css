@@ -307,3 +307,15 @@
   }
   
 }
+@media (max-width: 500px)
+{
+  
+  .elPuntaje
+  {
+     width:100%;
+  }
+  .puntaje
+  {
+      margin-left:15%;
+  }
+}
