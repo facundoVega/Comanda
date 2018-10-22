@@ -6,7 +6,7 @@
 .contenido
 {
     width: 100%;
-    height: 85%;
+    height: 768px;
   
     display:flex;
 
@@ -67,7 +67,7 @@
     width:80%;
     margin-left:10%;
   
-    height: 20%;
+    height: 15%;
 }
 .fila1 img
 {
@@ -175,7 +175,7 @@
   {
     position: absolute;
     font-size: 1.5em;
-    top: 4%;
+    top: 2%;
     color: pink;
     text-shadow: 2px 2px black;
     left: 5%;
@@ -254,7 +254,7 @@
   {
     position: absolute;
     font-size: 1.5em;
-    top: 8%;
+    top: 6%;
     color: pink;
     text-shadow: 2px 2px black;
     right: 5%;
@@ -292,7 +292,7 @@
   }
   .taparJuego
   {
-      margin-top:10%!important;
+     
   }
   .jugar
   {
@@ -303,7 +303,7 @@
 {
   .taparJuego
   {
-      margin-top:6%;
+      margin-top:135px;
   }
   
 }

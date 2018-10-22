@@ -140,6 +140,10 @@ if (distance < 0) {
   cambiarImagen(valor)
   {
     
+    if(this.taparJuego==true)
+    {
+      return;
+    }
     valor = parseInt(valor);
     valor = valor-1;
     let imgMostrar="imgMostrar"+valor;

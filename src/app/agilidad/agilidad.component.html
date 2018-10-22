@@ -1,10 +1,5 @@
 
-<div class="puntaje" [class.mostrarPuntajeFinal]="mostrarAlert">
-    <div class="elPuntaje">
-        <img  src="../../assets/imgs/cerebro.png" >
-      <h1>{{mensaje}}</h1>
-      </div>
-  </div>
+
 
 <div class="contenido">
   <div class="instrucciones">
@@ -12,7 +7,7 @@
     <h2>Instrucciones</h2>
 
 <p>* Se le presentaran 3  operaciones aritm&eacute;ticas.</p>
-  <p>*Tendra 10 segundos para resolver cada una.</p> 
+  <p>*Tendra 25 segundos para resolverlas todas.</p> 
  <p>*Cada vez que responda correctamente se le sumaran 10 pts.</p> 
  <p>*¡La multiplicaci&oacute;n suma 50 pts!</p> 
 <p>
@@ -24,12 +19,18 @@
 
   </div >
   <div class="juego">
+      <div class="puntaje" [class.mostrarPuntajeFinal]="mostrarAlert">
+          <div class="elPuntaje">
+              <img  src="../../assets/imgs/cerebro.png" >
+            <h1>{{mensaje}}</h1>
+            </div>
+        </div>
       <div class="taparJuego" (click)="JugarJuego()" [class.activarTaparJuego]="desactivarJuego">
         <h1>¡Presiona para jugar!</h1>
       </div>
       <div class="tiempo">
           <h2>Tiempo:</h2>
-          <span>5</span>
+          <span>{{tiempo}}</span>
           </div>
           <div class="puntos">
       

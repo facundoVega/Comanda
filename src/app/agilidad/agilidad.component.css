@@ -6,7 +6,7 @@
 .contenido
 {
     width: 100%;
-    height: 85%;
+    height: 700px;
   
     display:flex;
 
@@ -38,7 +38,7 @@
 .juego
 {
     width:70%;
-    height: 100%;
+
     display:flex;
     align-content: center;
     flex-direction: column;
@@ -70,7 +70,7 @@
     height: 300px;
     border: 5px solid white;
     background: orangered;
-    margin-top: 80px;
+    margin-top: 108px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -79,7 +79,7 @@
 .cuentas input
 {
     border: 2px solid black;
-    margin-top: 10px;
+  margin-top:10px;
     margin-bottom: 4px;
     font-size: 2em;
     color: black;
@@ -170,7 +170,7 @@
         width: 300px;
         height: 300px;
         box-sizing: border-box;
-        margin-top: 151px;
+        margin-top: 180px;
         background-color: orangered;
         border: 5px solid;
       
@@ -207,17 +207,18 @@
 {
     position:absolute;
     z-index:1200;
-    width: 70%;
-    height: 85%;
+    width: 100%;
+    height: 100%;
     display:flex;
     text-align:center;
     align-items:center; 
-  margin-left:30%;
+
 
   justify-content: center;
   }
   .elPuntaje
   {
+    display:flex;
       box-sizing: border-box;
       position: relative;
       justify-content: center;
@@ -225,7 +226,8 @@
       margin-top: 50px;
       background-color: #f44336;
       width: 50%;
-
+       align-items:center;
+        flex-direction: column;
       /* height: 50%; */
       border: 7px solid white;
       border-radius: 13%;
@@ -235,6 +237,7 @@
     font-family: 'Anton', sans-serif;
       color:black;
       letter-spacing: 1px;
+   
   }
   .elPuntaje img
   {
@@ -253,9 +256,21 @@
   {
       width:100%;
   }
+  .puntaje
+  {
+      width:100%;
+  }
  
   .jugar
   {
       font-size: 1em;
   }
+}
+@media (max-width: 680px)
+{
+  .instrucciones
+  {
+      display:none;
+  }
+
 }

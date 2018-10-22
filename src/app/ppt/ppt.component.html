@@ -16,23 +16,28 @@
 
   </div >
   <div class="juego">
-      <div class="miAlert" >
-          <div class="alert">
-              <h1>{{mensaje}}</h1>
-          </div>
-         
-        </div>
+      <div class="taparJuego" [class.activarTaparJuego]="taparJuego"></div>
+      <button class="jugar" [class.mostrar]="ocultarBoton" (click)="JugarJuego()" >Jugar</button>
+          <div class="puntaje" [class.mostrarPuntajeFinal]="mostrarAlert">
+              <div class="elPuntaje">
+                  <img  src="../../assets/imgs/cerebro.png" >
+                <h1>{{mensaje}}</h1>
+                </div>
+            </div>
+            <div class="puntos">
+      
+                <h2>Puntos:</h2>
+                <span>{{puntos}}</span>
+                </div>
     <h1 class="tituloJuego">¡Piedra, papel o tijera!</h1>
     <div class="juegoPc">
         <img class="pregunta" [src]="fotoMostrar" width="150px" height="150px">
-        <div class="alert" [class.mostrar]="mostrarAlert">
-          <h1>{{mensaje}}</h1>
-      </div>
+       
     </div>
     <div class="juegoUser">
-    <img (click)="jugo('papel')" class="jugadaPapel" [class.activa]="activaPapel" src="../../assets/imgs/papel.png" width="150px" height="150px">
-    <img (click)="jugo('piedra')" class="jugadaPiedra" [class.activa]="activaPiedra" src="../../assets/imgs/piedra.png"  width="150px" height="150px">
-    <img (click)="jugo('tijera')" class="jugadaTijera" [class.activa]="activaTijera" src="../../assets/imgs/tijera.jpg"  width="150px" height="150px">
+    <img (click)="jugo('papel')" class="jugadaPapel" [class.activa]="activaPapel" src="../../assets/imgs/papel.png" >
+    <img (click)="jugo('piedra')" class="jugadaPiedra" [class.activa]="activaPiedra" src="../../assets/imgs/piedra.png"  >
+    <img (click)="jugo('tijera')" class="jugadaTijera" [class.activa]="activaTijera" src="../../assets/imgs/tijera.jpg"  >
 
     </div>
 

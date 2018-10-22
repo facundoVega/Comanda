@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgilidadComponent implements OnInit {
 
+  x:any;
   puntos:number;
   miValor:number;
   valor1:number;
@@ -16,6 +17,7 @@ export class AgilidadComponent implements OnInit {
   mensaje:string;
   mostrarAlert:boolean;
 desactivarJuego:boolean;
+tiempo="";
   constructor() {
     this.valor1=   Math.floor(Math.random() * (200 - 1)) + 1;
     this.valor2=Math.floor(Math.random() * (200 - 1)) + 1;
@@ -30,8 +32,42 @@ desactivarJuego:boolean;
   }
   JugarJuego()
   {
+  
+       
     this.desactivarJuego =false;
     this.jugados=1;
+    let tope = new Date().getTime();
+    tope=tope +25*1000;
+    var countDownDate = new Date(tope).getTime();
+    this.x = setInterval(()=> {
+
+      // Get todays date and time
+      var now = new Date().getTime();
+    
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+    
+      // Time calculations for days, hours, minutes and seconds
+    
+     
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      this.tiempo ="00:"+seconds;
+      if (distance <1) {
+        this.tiempo= "0";
+        clearInterval(this.x);
+       
+      
+        this.mensaje="Se acabo el tiempo  Juego terminado";
+        this.mostrarAlert=false;
+        this.miValor =undefined;
+        setTimeout( ()=>{
+         this.mostrarAlert=true;
+         this.desactivarJuego=true;
+         }, 2000);
+     
+      }
+    
+    });
   }
   Jugar()
   {
@@ -110,6 +146,8 @@ desactivarJuego:boolean;
          this.mostrarAlert=true;
          }, 2000);
         this.puntos =this.puntos+50;
+        clearInterval(this.x);
+        this.tiempo="00";
       }
       else
       {
@@ -119,6 +157,8 @@ desactivarJuego:boolean;
         setTimeout( ()=>{
          this.mostrarAlert=true;
          this.desactivarJuego=true;
+         clearInterval(this.x);
+         this.tiempo="00";
          }, 2000);
       }
       this.jugados =1;
