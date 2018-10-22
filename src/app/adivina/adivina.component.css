@@ -305,10 +305,7 @@
       {
           width:100%;
       }
-      .taparJuego
-      {
-         /* margin-top:10%!important;*/
-      }
+     
       .jugar
       {
           font-size: 1em;
@@ -316,10 +313,10 @@
     }
     @media (max-width: 1150px)
     {
-      .taparJuego
-      {
-         /* margin-top:6%;*/
-      }
+        .taparJuego
+        {
+           margin-top:120px
+        }
       
     }
     @media (max-width: 500px)

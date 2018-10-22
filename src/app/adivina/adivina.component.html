@@ -26,9 +26,8 @@
 
   <div class="juego">
       <div class="taparJuego" [class.activarTaparJuego]="taparJuego"></div>
-    <h2 class="tituloJuego">¡Adivina el numero!</h2><h3 class="tiempo" [class.mostrar]="ocultarTiempo">{{tiempo}}</h3><button class="jugar" [class.mostrar]="ocultarBoton" (click)="JugarJuego()" >Jugar</button>
-
-    <span class="puntos">Pts:{{puntos}}</span>
+    <h2 class="tituloJuego">¡Adivina el numero!</h2><button class="jugar" [class.mostrar]="ocultarBoton" (click)="JugarJuego()" >Jugar</button>
+  
     <div class="computadora">
       
       <div class="laAyuda">

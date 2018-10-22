@@ -22,8 +22,8 @@ import { MemoriaComponent} from '../memoria/memoria.component';
     {path:"adivina", component:AdivinaComponent}
     ]},
     { path: "**", component: NotFoundComponent }
-];
-*/
+];*/
+
 const rutas: Routes = [
   { path: "", component: InicialComponent },
 
