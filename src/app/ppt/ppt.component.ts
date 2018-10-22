@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ConexionService } from '../conexion.service';
+import { JwtHelperService } from "@auth0/angular-jwt";
 
 @Component({
   selector: 'app-ppt',
@@ -6,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ppt.component.css']
 })
 export class PptComponent implements OnInit {
+  public token: any;
   fotos:any[]=[];
   fotoMostrar;
   activaTijera=false;
@@ -17,7 +20,9 @@ export class PptComponent implements OnInit {
   jugadas:number;
   ocultarBoton:boolean;
   taparJuego;
-  constructor() { 
+  constructor( private miCon:ConexionService ) { 
+    let JWTHelper = new JwtHelperService();
+    this.token = JWTHelper.decodeToken(localStorage.getItem("token"));
     this.taparJuego=true;
     this.ocultarBoton =true;
     this.jugadas=0;
@@ -134,6 +139,10 @@ VerificarJugada(valor, miValor)
   if(this.jugadas==5)
   {
     this.mensaje = this.mensaje +".  Juego Terminado";
+    this.miCon.CargarScore(this.token.correo, "puntaje_PPT", this.puntos.toString()).subscribe(
+      exito => console.log("Exito" + JSON.stringify(exito)),
+      error => console.log("Error" + JSON.stringify(error))
+    );
    
   }
 }

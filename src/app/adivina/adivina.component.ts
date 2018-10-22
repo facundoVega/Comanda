@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ConexionService } from '../conexion.service';
+import { JwtHelperService } from "@auth0/angular-jwt";
 
 @Component({
   selector: 'app-adivina',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./adivina.component.css']
 })
 export class AdivinaComponent implements OnInit {
+  public token: any;
+
 puntos:number;
 mensaje:string;
 valor:number;
@@ -17,7 +21,9 @@ taparJuego;
 mensajeFinal="";
 ocultarBoton:boolean;
 
-  constructor() { 
+  constructor( private miCon:ConexionService) { 
+    let JWTHelper = new JwtHelperService();
+    this.token = JWTHelper.decodeToken(localStorage.getItem("token"));
     this.ayuda=false;
     this.taparJuego=true;
     //this.valor=undefined;
@@ -55,7 +61,10 @@ ocultarBoton:boolean;
       if(this.puntos == 0)
       {
         this.mensajeFinal="Perdio no adivino el numero";
-      
+        this.miCon.CargarScore(this.token.correo, "puntaje_AeN", this.puntos.toString()).subscribe(
+          exito => console.log("Exito" + JSON.stringify(exito)),
+          error => console.log("Error" + JSON.stringify(error))
+        );
         this.mostrarPuntajeFinal=false;
         setTimeout( ()=>{
           this.mostrarPuntajeFinal = true;
@@ -73,6 +82,10 @@ ocultarBoton:boolean;
         this.mensajeCaja =this.valorSecreto.toString();
       
         this.mensajeFinal = "Usted adivino su puntaje es:"+ this.puntos + " pts";
+        this.miCon.CargarScore(this.token.correo, "puntaje_AeN", this.puntos.toString()).subscribe(
+          exito => console.log("Exito" + JSON.stringify(exito)),
+          error => console.log("Error" + JSON.stringify(error))
+        );
         this.mostrarPuntajeFinal=false;
         setTimeout( ()=>{
           this.mostrarPuntajeFinal = true;
@@ -98,7 +111,10 @@ ocultarBoton:boolean;
         if(this.puntos == 0)
         {
           this.mensajeFinal="Perdio no adivino el numero";
-        
+          this.miCon.CargarScore(this.token.correo, "puntaje_AeN", this.puntos.toString()).subscribe(
+            exito => console.log("Exito" + JSON.stringify(exito)),
+            error => console.log("Error" + JSON.stringify(error))
+          );
           this.mostrarPuntajeFinal=false;
           setTimeout( ()=>{
             this.mostrarPuntajeFinal = true;
@@ -122,7 +138,12 @@ ocultarBoton:boolean;
         if(this.puntos == 0)
         {
           this.mensajeFinal="Perdio no adivino el numero";
+
           this.mensajeCaja =this.valorSecreto.toString();
+          this.miCon.CargarScore(this.token.correo, "puntaje_AeN", this.puntos.toString()).subscribe(
+            exito => console.log("Exito" + JSON.stringify(exito)),
+            error => console.log("Error" + JSON.stringify(error))
+          );
           this.mostrarPuntajeFinal=false;
           setTimeout( ()=>{
             this.mostrarPuntajeFinal = true;

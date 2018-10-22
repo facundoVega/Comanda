@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ConexionService } from '../conexion.service';
+import { JwtHelperService } from "@auth0/angular-jwt";
 
 @Component({
   selector: 'app-memoria',
@@ -6,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./memoria.component.css']
 })
 export class MemoriaComponent implements OnInit {
-
+  public token: any;
   mostrarPuntajeFinal:boolean;
   countdown:any;
  x:any;
@@ -23,7 +25,9 @@ claveActual;
 tiempo="";
 puntos:number;
 taparJuego:boolean;
-  constructor(){
+  constructor( private miCon:ConexionService){
+    let JWTHelper = new JwtHelperService();
+    this.token = JWTHelper.decodeToken(localStorage.getItem("token"));
     this.puntos=0;
     this.taparJuego=true;
     this.ocultarBoton = true;
@@ -89,6 +93,10 @@ Jugar()
 
 if (distance < 0) {
   clearInterval(this.x);
+  this.miCon.CargarScore(this.token.correo, "puntajeJM", this.puntos.toString()).subscribe(
+    exito => console.log("Exito" + JSON.stringify(exito)),
+    error => console.log("Error" + JSON.stringify(error))
+  );
  this.tiempo ="Juego finalizado";
  this.ocultarTiempo=false;
  this.ocultarBoton=true;
@@ -190,6 +198,10 @@ if (distance < 0) {
           this.puntos = this.puntos+10;
           if(this.puntos==80)
           {
+            this.miCon.CargarScore(this.token.correo, "puntajeJM", this.puntos.toString()).subscribe(
+              exito => console.log("Exito" + JSON.stringify(exito)),
+              error => console.log("Error" + JSON.stringify(error))
+            );
             this.IniciarJuego();
           }
         }

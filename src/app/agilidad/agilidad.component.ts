@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ConexionService } from '../conexion.service';
+import { JwtHelperService } from "@auth0/angular-jwt";
 
 @Component({
   selector: 'app-agilidad',
@@ -6,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./agilidad.component.css']
 })
 export class AgilidadComponent implements OnInit {
-
+  public token: any;
   x:any;
   puntos:number;
   miValor:number;
@@ -18,7 +20,9 @@ export class AgilidadComponent implements OnInit {
   mostrarAlert:boolean;
 desactivarJuego:boolean;
 tiempo="";
-  constructor() {
+  constructor( private miCon:ConexionService) {
+    let JWTHelper = new JwtHelperService();
+    this.token = JWTHelper.decodeToken(localStorage.getItem("token"));
     this.valor1=   Math.floor(Math.random() * (200 - 1)) + 1;
     this.valor2=Math.floor(Math.random() * (200 - 1)) + 1;
     this.operador = "+";
@@ -34,6 +38,7 @@ tiempo="";
   {
   
        
+    this.puntos=0;
     this.desactivarJuego =false;
     this.jugados=1;
     let tope = new Date().getTime();
@@ -58,7 +63,12 @@ tiempo="";
        
       
         this.mensaje="Se acabo el tiempo  Juego terminado";
+
         this.mostrarAlert=false;
+        this.miCon.CargarScore(this.token.correo, "puntaje_AA", this.puntos.toString()).subscribe(
+          exito => console.log("Exito" + JSON.stringify(exito)),
+          error => console.log("Error" + JSON.stringify(error))
+        );
         this.miValor =undefined;
         setTimeout( ()=>{
          this.mostrarAlert=true;
@@ -78,7 +88,7 @@ tiempo="";
      
       if(this.miValor == total)
       {
-        this.mensaje="Excelente, sumo 10 pts";
+        this.mensaje="Excelente";
         
         this.mostrarAlert=false;
         this.miValor =undefined;
@@ -109,7 +119,7 @@ tiempo="";
       if(this.miValor == total)
       {
 
-        this.mensaje="Excelente, sumo 10 pts" ;
+        this.mensaje="Excelente" ;
         
         this.mostrarAlert=false;
         this.miValor =undefined;
@@ -139,7 +149,7 @@ tiempo="";
       let total=this.valor1 * this.valor2;
       if(this.miValor == total)
       {
-        this.mensaje="Excelente, sumo 10 pts";
+        this.mensaje="Excelente";
         this.mostrarAlert=false;
         this.miValor =undefined;
         setTimeout( ()=>{
@@ -153,10 +163,15 @@ tiempo="";
       {
         this.mensaje="Incorrecto, el resultado era:"+total +" Juego terminado";
         this.mostrarAlert=false;
+        this.miCon.CargarScore(this.token.correo, "puntaje_AA", this.puntos.toString()).subscribe(
+          exito => console.log("Exito" + JSON.stringify(exito)),
+          error => console.log("Error" + JSON.stringify(error))
+        );
         this.miValor =undefined;
         setTimeout( ()=>{
          this.mostrarAlert=true;
          this.desactivarJuego=true;
+         this.puntos=0;
          clearInterval(this.x);
          this.tiempo="00";
          }, 2000);

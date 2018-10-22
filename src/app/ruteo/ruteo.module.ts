@@ -10,6 +10,7 @@ import { PptComponent} from '../ppt/ppt.component';
 import { AdivinaComponent} from '../adivina/adivina.component';
 import { AgilidadComponent} from '../agilidad/agilidad.component';
 import { MemoriaComponent} from '../memoria/memoria.component';
+import { MisPuntosComponent} from '../mis-puntos/mis-puntos.component';
 
 /*const rutas: Routes = [
   { path: "", component: LoginComponent },
@@ -26,12 +27,13 @@ import { MemoriaComponent} from '../memoria/memoria.component';
 
 const rutas: Routes = [
   { path: "", component: InicialComponent },
-
+ 
   { path: "Inicial", component: InicialComponent, children:[
     {path:"juegos", component:JuegosComponent, },
     {path:"ppt", component:PptComponent},
     {path:"agilidad", component:AgilidadComponent},
     {path:"memoria", component:MemoriaComponent},
+    { path: "MisPuntos", component: MisPuntosComponent },
     {path:"adivina", component:AdivinaComponent}
   ]},
     { path: "**", component: NotFoundComponent }

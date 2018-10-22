@@ -19,6 +19,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MemoriaComponent } from './memoria/memoria.component';
 import { AdivinaComponent } from './adivina/adivina.component';
 import { AgilidadComponent } from './agilidad/agilidad.component';
+import { MisPuntosComponent } from './mis-puntos/mis-puntos.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,9 @@ import { AgilidadComponent } from './agilidad/agilidad.component';
 
     AdivinaComponent,
 
-    AgilidadComponent
+    AgilidadComponent,
+
+    MisPuntosComponent
   ],
   imports: [
     BrowserModule,
