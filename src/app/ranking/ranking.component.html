@@ -1,0 +1,23 @@
+<div class="contenido">
+ 
+    <table id="customers">
+        <tr>
+          <th>Usuario</th>
+          <th>Agilidad Aritm&eacute;tica</th>
+          <th>Adivina el n&uacute;mero</th>
+          <th>Piedra, papel o tijera</th>
+          <th>Juego de la memoria</th>
+        </tr>
+        <tr *ngFor="let punto of puntos">
+          <td>{{punto.nombre}}</td>
+          <td>{{punto.puntaje_AA}}</td>
+          <td>{{punto.puntaje_AeN}}</td>
+          <td>{{punto.puntaje_PPT}}</td>
+          <td>{{punto.puntajeJM}}</td>
+        </tr>
+     
+       
+      </table>
+      
+  
+  </div>

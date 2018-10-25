@@ -11,21 +11,23 @@ import { AdivinaComponent} from '../adivina/adivina.component';
 import { AgilidadComponent} from '../agilidad/agilidad.component';
 import { MemoriaComponent} from '../memoria/memoria.component';
 import { MisPuntosComponent} from '../mis-puntos/mis-puntos.component';
-
-/*const rutas: Routes = [
+import {RankingComponent } from '../ranking/ranking.component';
+const rutas: Routes = [
   { path: "", component: LoginComponent },
 
   { path: "Inicial", component: InicialComponent, canActivate: [ValidadoraService], children:[
     {path:"juegos", component:JuegosComponent, canActivate: [ValidadoraService]},
     {path:"ppt", component:PptComponent, canActivate: [ValidadoraService] },
-    {path:"agilidad", component:AgilidadComponent},
-    {path:"memoria", component:MemoriaComponent},
-    {path:"adivina", component:AdivinaComponent}
+    {path:"agilidad", component:AgilidadComponent, canActivate: [ValidadoraService] },
+    {path:"memoria", component:MemoriaComponent ,canActivate: [ValidadoraService]  },
+   
+    { path: "Puntos", component: RankingComponent, canActivate: [ValidadoraService]  },
+    {path:"adivina", component:AdivinaComponent, canActivate: [ValidadoraService] }
     ]},
     { path: "**", component: NotFoundComponent }
-];*/
+];
 
-const rutas: Routes = [
+/*const rutas: Routes = [
   { path: "", component: InicialComponent },
  
   { path: "Inicial", component: InicialComponent, children:[
@@ -34,10 +36,11 @@ const rutas: Routes = [
     {path:"agilidad", component:AgilidadComponent},
     {path:"memoria", component:MemoriaComponent},
     { path: "MisPuntos", component: MisPuntosComponent },
+    { path: "Ranking", component: RankingComponent },
     {path:"adivina", component:AdivinaComponent}
   ]},
     { path: "**", component: NotFoundComponent }
-];
+];*/
 
 
 @NgModule({

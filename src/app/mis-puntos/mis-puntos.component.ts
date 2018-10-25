@@ -9,54 +9,33 @@ import { JwtHelperService } from "@auth0/angular-jwt";
 })
 export class MisPuntosComponent implements OnInit {
   public token: any;
-  memoria;
-  adivina;
-  agilidad;
-  piedra;
-  user;
+puntos : any[]=[];
+misPuntos:any;
+user;
   constructor(private conexion: ConexionService) {
    
-
-   /* let JWTHelper = new JwtHelperService();
+  /*  let JWTHelper = new JwtHelperService();
     this.token = JWTHelper.decodeToken(localStorage.getItem("token"));
-    this.token.correo;
-    this.conexion.ObtenerScore(this.token.correo, "puntajeJM").subscribe(
+    this.user =this.token.correo;
+    this.conexion.ObtenerScores().subscribe(
       exito => {
 
         // this.puntajes = (exito as any).puntajes;
         // this.dataSource = this.puntajes;
-        this.memoria = (exito as any).puntaje;
-      },
-      error => alert("Error: " + JSON.stringify(error))
-    );
-    this.conexion.ObtenerScore(this.token.correo, "puntaje_AeN").subscribe(
-      exito => {
-
-        // this.puntajes = (exito as any).puntajes;
-        // this.dataSource = this.puntajes;
-        this.adivina = (exito as any).puntaje;
-      },
-      error => alert("Error: " + JSON.stringify(error))
-    );
-    this.conexion.ObtenerScore(this.token.correo, "puntaje_AA").subscribe(
-      exito => {
-
-        // this.puntajes = (exito as any).puntajes;
-        // this.dataSource = this.puntajes;
-        this.agilidad = (exito as any).puntaje;
-      },
-      error => alert("Error: " + JSON.stringify(error))
-    );
-    this.conexion.ObtenerScore(this.token.correo, "puntaje_PPT").subscribe(
-      exito => {
-
-        // this.puntajes = (exito as any).puntajes;
-        // this.dataSource = this.puntajes;
-        this.piedra= (exito as any).puntaje;
+        this.puntos = (exito as any).puntajes;
+        for(let i=0;i<this.puntos.length;i++)
+        {
+          if(this.puntos[i].nombre ==this.token.nombre)
+          {
+            this.misPuntos=this.puntos[i];
+          }
+        }
       },
       error => alert("Error: " + JSON.stringify(error))
     );*/
   }
+  
+  
 
   ngOnInit() {
   }

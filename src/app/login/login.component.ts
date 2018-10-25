@@ -10,11 +10,11 @@ import { Location } from '@angular/common';
 export class LoginComponent implements OnInit {
 ocultarLogin:boolean;
 ocultarRegistro:boolean;
-correoLogin:string="";
-passLogin:string="";
-correoReg:string="";
-passReg:string="";
-nombreReg:string="";
+correoLogin;
+passLogin;
+correoReg;
+passReg;
+nombreReg;
 
   constructor(private con:ConexionService) { 
 
@@ -42,14 +42,28 @@ CerrarRegistro()
 }
 Loguear()
 {
- this.con.Loguear(this.passLogin, this.correoLogin).subscribe(
+  if(!this.correoLogin || !this.passLogin) {
+
+    alert("Ups..."+ "Todos los campos deben ser completados.");
+    return;
+  }
+ this.con.Loguear( this.correoLogin,this.passLogin ).subscribe(
   exito=>{ 
 
-    localStorage.setItem("token", (exito as any).token);
   
-  location.href = "./Inicial/juegos";
+
+  if((exito as any).valido == "false") {
+
+  
+  alert("Ups..."+ (exito as any).mensaje);
+  } else {
+
+    localStorage.setItem("token", (exito as any).token);
+    location.href = "./Inicial/juegos";
+  }
+  
   },
- error=>alert("error" + JSON.stringify(error))
+ error=>alert("error" +  (error as any).mensaje)
   
 
 
@@ -58,12 +72,27 @@ Loguear()
 }
 Registrar()
 {
+  if(!this.correoReg || !this.passReg) {
+      
+   alert("Ups..."+ "Todos los campos deben ser completados.");
+    return;
+  }
   this.con.Registrar( this.correoReg, this.nombreReg,this.passReg,).subscribe(
     exito=>{alert(JSON.stringify(exito));
-      location.href="/";
+   
+
+      if((exito as any).valido == "false") {
+
+       alert("Ups..."+ (exito as any).mensaje);
+      } else {
+
+       alert("Bien!"+ "Se ha creado tu usuario. En breves te dirigiremos a la página de logueo.");
+        setTimeout(() => location.href = "/", 1000);
+      }
+
 
     },
-    error=>alert("error" + JSON.stringify(error))
+    error=>alert("error" + (error as any).mensaje)
   );
 
 

@@ -20,6 +20,7 @@ import { MemoriaComponent } from './memoria/memoria.component';
 import { AdivinaComponent } from './adivina/adivina.component';
 import { AgilidadComponent } from './agilidad/agilidad.component';
 import { MisPuntosComponent } from './mis-puntos/mis-puntos.component';
+import { RankingComponent } from './ranking/ranking.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,9 @@ import { MisPuntosComponent } from './mis-puntos/mis-puntos.component';
 
     AgilidadComponent,
 
-    MisPuntosComponent
+    MisPuntosComponent,
+
+    RankingComponent
   ],
   imports: [
     BrowserModule,

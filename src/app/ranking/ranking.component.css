@@ -42,22 +42,31 @@
     justify-content: center;
     position:relative;
 }
-.puntaje h1, .puntaje h3 , .puntaje span
-{
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top:5%;
+    background:red;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+
+}
+
+
+
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: orangered;
+  
     font-family: 'Luckiest Guy', cursive;
     
     letter-spacing: 1px;
-   
-}
-ul
-{
-    box-sizing: border-box;
-    width:80%;
-    list-style: none;
-}
-
-li
-{
-    border-bottom: 3px solid white;
-    padding: 10px;
 }
