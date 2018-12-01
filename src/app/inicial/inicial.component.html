@@ -15,17 +15,24 @@
   <div class="cabecera">
       
       <ul class="rutas">
-        <li ><span class="tituloInicial" >Sal&oacute;n de juegos</span></li>
-        <li class="ruta ruta1" [class.responsiveRuta]="setearMargen"><a  routerLink="juegos" routerLinkActive="activa">Juegos</a></li>
+        <li ><span class="tituloInicial" >La comanda</span></li>
+        <span class="nombreyTipo">{{nombre}}</span>
+        <span class="nombreyTipo">{{tipo}}</span>
+        <li class="ruta ruta1" [class.responsiveRuta]="setearMargen"><a  [routerLink]="ruta1" routerLinkActive="activa">{{menu1}}</a></li>
       
-        <li class="ruta"><a  routerLink="Puntos" routerLinkActive="activa">Puntajes</a></li>
+        <li class="ruta"><a  routerLink="./ocupar" routerLinkActive="activa">{{menu2}}</a></li>
+        <li class="ruta"><a  routerLink="./cuenta" routerLinkActive="activa">{{menu3}}</a></li>
+        <li class="ruta"><a  routerLink="./estadoPedido" routerLinkActive="activa">{{menu4}}</a></li>
+
         <li class="ruta"><button class="salir" (click)="salir()" mat-raised-button color="warn">Salir</button></li>
       </ul>
      <button  [matMenuTriggerFor]="menu" class="btnMenu">&#9776;</button>
      <mat-menu #menu="matMenu" style="background-color:red">
-      <a  routerLink="juegos" class="link"><button mat-menu-item style="font-family: 'Luckiest Guy', cursive;">Juegos</button></a>
+      <a [class.ocultar]="ocultarRuta1" [routerLink]="ruta1" class="link"><button mat-menu-item style="font-family: 'Luckiest Guy', cursive;">{{menu1}}</button></a>
      
-      <a  routerLink="Puntos" class="link"> <button mat-menu-item style="font-family: 'Luckiest Guy', cursive;">Puntajes</button></a>
+      <a [class.ocultar]="ocultarRuta2" [routerLink]="ruta2" class="link"> <button mat-menu-item style="font-family: 'Luckiest Guy', cursive;">{{menu2}}</button></a>
+      <a [class.ocultar]="ocultarRuta3" [routerLink]="ruta3" class="link"> <button mat-menu-item style="font-family: 'Luckiest Guy', cursive;">{{menu3}}</button></a>
+      <a [class.ocultar]="ocultarRuta4" [routerLink]="ruta4" class="link"> <button mat-menu-item style="font-family: 'Luckiest Guy', cursive;">{{menu4}}</button></a>
       <button mat-menu-item style="font-family: 'Luckiest Guy', cursive;" (click)="salir()">Salir</button>
     </mat-menu>
   </div>

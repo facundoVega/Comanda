@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans');
+@import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Anton|Lobster');
+@import url('https://fonts.googleapis.com/css?family=Anton|Lobster|Ultra');
+@import url('https://fonts.googleapis.com/css?family=Anton|Carter+One|Lobster|Ultra');
+
+
+.contenido
+{
+    width: 100%;
+    height: 92%;
+    background: red;
+    position: relative;
+    
+    background-image: url("../../assets/imgs/fondo.jpg");
+    margin-top: -78px;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+}
+.cervezas
+{
+    background-image: url("../../assets/imgs/cerveza.jpg");
+    width: 200px;
+    height: 200px;
+    background-size: 100% 100%;
+    border-radius: 5%;
+    box-shadow: 2px 2px black;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size:2em;
+    outline:none;
+
+
+
+}
+.postres
+{
+    background-image: url("../../assets/imgs/postres.png");
+    width: 200px;
+    height: 200px;
+    background-size: 100% 100%;
+    border-radius: 5%;
+    box-shadow: 2px 2px black;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size:2em;
+    outline:none;
+
+
+}
+.postres span
+{
+    background: #ff0000bf;
+    border-radius: 2%;
+    padding: 2%;
+}
+.cervezas span
+{
+    background: #ff0000bf;
+    border-radius: 2%;
+    padding: 2%;
+}
+.bebidas
+{
+    background-image: url("../../assets/imgs/bebidas.jpg");
+    width: 200px;
+    height: 200px;
+    background-size: 100% 100%;
+    border-radius: 5%;
+    box-shadow: 2px 2px black;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size:2em;
+    outline:none;
+
+
+}
+.bebidas span
+{
+    background: #ff0000bf;
+    border-radius: 2%;
+    padding: 2%;
+}
+.platos
+{
+    background-image: url("../../assets/imgs/comida.jpg");
+    width: 200px;
+    height: 200px;
+    background-size: 100% 100%;
+    border-radius: 5%;
+    box-shadow: 2px 2px black;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size:2em;
+    outline:none;
+}
+
+.elegido
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.64);
+    top: 0;
+    display:none;
+}
+.elegidoB
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 20000;
+    background: rgba(0, 0, 0, 0.64);
+    top: 0;
+    display:none;
+
+}
+.tituloPag
+{
+    position: absolute;
+    top: 0;
+    color: white;
+    text-shadow: 2px 2px black;
+    font-family: 'Carter One', cursive;
+
+}
+.mostrarElegido
+{
+
+    display:block;
+}
+.mostrarElegidoB
+{
+    display:block!important;
+
+}
+.platos span
+{
+    background: #ff0000bf;
+    border-radius: 2%;
+    padding: 2%;
+}
+.cervezas:hover , .bebidas:hover, .platos:hover{
+    cursor:pointer;
+}
+.fondoPlatos
+{
+    position: absolute;
+    z-index: 2000;
+    width: 100%;
+    height: 100%;
+    background: #ff000057;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.losPlatos
+{
+
+
+    width: 400px;
+    background: orangered;
+    height: 400px;
+    position: relative;
+    -ms-grid-row-align: center;
+    align-self: center;
+    overflow: scroll;
+    overflow-x: hidden;
+
+
+}
+.lasBebidas
+{
+    width: 400px;
+    background: orangered;
+    height: 400px;
+    position: relative;
+    -ms-grid-row-align: center;
+    align-self: center;
+    overflow: scroll;
+    overflow-x: hidden;
+
+}
+.losPlatos1
+{
+    width: 400px;
+    background: rgba(0,0,0,.87);
+    height: 550px;
+    margin-top: -20px;
+    position: absolute;
+    -ms-grid-row-align: center;
+    align-self: center;
+    border: 3px solid black;
+    border-radius: 2%;
+ 
+  display:none;
+}
+.lasBebidas1
+{
+    width: 400px;
+    background: rgba(0,0,0,.87);
+    height: 550px;
+    margin-top: -20px;
+    position: absolute;
+    -ms-grid-row-align: center;
+    align-self: center;
+    border: 3px solid black;
+    border-radius: 2%;
+ 
+  display:none;
+
+}
+.ocultar
+{
+    display: none!important;
+}
+.mostrar
+{
+    display:block!important;
+}
+.cerrar
+{
+    background-image: url("../../assets/imgs/cerrar.png");
+   
+    background-size: 100% 100%;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    top: 0%;
+    right: 2px;
+}
+.cerrar:hover
+{
+    cursor:pointer;
+}
+.losPlatos1 h1, .lasBebidas1 h1
+{
+   color:white;
+}
+.unPlato
+{
+    width: 100%;
+    padding-bottom: 30px;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+    position: relative;
+}
+
+.grupo1
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.grupo2
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.unaBebida 
+{
+    width: 100%;
+    padding-bottom: 30px;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+    position: relative;
+
+}
+.unPlato h2, .unaBebida h2
+{
+    text-align: left;
+    padding-left: 5px;
+}
+.unPlato .precio, .unaBebida .precio
+{
+    position: absolute;
+    top: 18px;
+    font-size: 1.5em;
+    right: 5px;
+}
+
+.unPlato .cantidad, .unaBebida .cantidad
+{
+    position: absolute;
+    left: 5px;
+}
+.botones
+{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+ 
+    margin-top: 10px;
+}
+.botones button
+{
+    background-color: red;
+    border: 2px solid white;
+    padding: 5px;
+    /* border-radius: 40% 40%; */
+    font-size: 1.6em;
+    width: 45%;
+    color: white;
+    outline: none;
+    height: 20%;
+    font-family: 'Anton', sans-serif;
+}
+
+.botones button:hover
+{
+    cursor:pointer;
+    background-color: rgba(255, 0, 0, 0.664);
+}
+
+.unPlato .cantidadIngreso, .unaBebida .cantidadIngreso
+{
+    position: absolute;
+    left: 80px;
+    width: 40px;
+}
+.btnPlatos
+{
+        /* width: 40px; */
+        font-size: 1.5em;
+        padding: 5px;
+        box-sizing: border-box;
+        background: #e81515;
+        /* outline: none; */
+        /* border: 2px solid white; */
+        padding: 5px 10px;
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+}
+
+.btnPlatos:hover
+{
+    cursor:pointer;
+}
+.btnEnviar
+{
+    position: absolute;
+    top: 5px;
+    background: orangered;
+    padding: 2%;
+    border-radius: 5%;
+    outline: none;
+    /* border: 6px solid; */
+    display: none;
+    font-family: 'Anton', sans-serif;
+    font-size: 1.5em;
+}
+.btnEnviar:hover
+{
+    cursor:pointer;
+
+}
+
+@media (max-width: 850px)
+{
+    .grupo1, .grupo2
+    {
+        flex-direction: column;
+        align-items:center;
+        justify-content: space-between;
+    }
+    .grupo1 .platos, .grupo2 .cervezas
+    {
+        margin-bottom:10px;
+    }
+}
+@media (max-width: 416px)
+{
+   .contenido
+   {
+       flex-direction: column;
+       padding-top:60px;
+   }
+   .tituloPag
+   {
+       display:none;
+   }
+}
+@media (max-height : 550px)
+{
+   .contenido
+   {
+       height: 580px;
+   }
+}

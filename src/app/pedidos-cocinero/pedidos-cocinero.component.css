@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css?family=Anton|Carter+One|Lobster|Ultra');
+@import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Anton|Permanent+Marker');
+
+
+
+
+.contenido
+{
+    width: 100%;
+   min-height: 92%;
+    background: red;
+    position: relative;
+    
+    background-image: url("../../assets/imgs/fondo.jpg");
+    margin-top: -78px;
+    display: flex;
+    text-align: center;
+  
+    align-items: center;
+    box-sizing: border-box;
+    padding-bottom: 50px;
+    flex-direction: column;
+}
+
+.grupo2, .grupo1
+{
+    width: 100%;
+
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.mesa
+{
+    width: 200px;
+    
+    border: 2px solid red;
+    background: #f44336;
+    border-radius: 5%;
+    height: 280px;
+    width: 200px;
+    /* height: 200px; */
+    background: orangered;
+    position: relative;
+    padding: 1%;
+    /* display: flex; */
+}
+.mesas
+{
+    width: 80%;
+    /* height: 600px; */
+    background: rgba(0,0,0,.6);
+    /* border-radius: 5%; */
+    padding: 2%;
+}
+
+.boton
+{
+    background-color: red;
+    border: 2px solid white;
+    padding: 5px;
+    /* border-radius: 40% 40%; */
+    height: 80px;
+    font-size: 1.6em;
+    width: 45%;
+    color: white;
+    outline: none;
+    height: 20%;
+    font-family: 'Anton', sans-serif;
+}
+
+.boton:hover
+{
+    cursor:pointer;
+    background-color:rgba(255, 0, 0, 0.541);
+}
+.tituloTabla
+{
+    color:white;
+   
+    border-bottom:2px solid white;
+
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 16px;
+    color:white;
+}
+th
+{
+    background-color: orangered;
+}
+.btnOcupar
+{
+    background: red;
+    outline: none;
+    border-radius: 5%;
+}
+.btnOcupar:hover
+{
+    cursor:pointer;
+    background-color: rgba(255, 0, 0, 0.432);
+}
+.elPedido
+{
+    width: 400px;
+    min-width: 40%;
+    background: white;
+    padding: 5px;
+    position:absolute;
+    display:none;
+    padding-bottom: 10%;
+    background-image:url("../../assets/imgs/papel2.jpg");
+    background-size: 100% 100%;
+}
+.mostrarPedido
+{
+    display:block;
+}
+
+.elPedido h2
+{
+    text-align: right;
+    /* margin-right: 5%; */
+    border-bottom: 2px solid;
+    width: 80%;
+    margin-left: 10%;
+    font-family: 'Permanent Marker', cursive;
+}
+.elPedido h1
+{
+    font-family: 'Permanent Marker', cursive;
+    border-bottom: 3px solid;
+    width: 50%;
+    margin-left: 25%;
+
+}
+.cantidad
+{
+    position: absolute;
+    left: 5%;
+    font-size:1.7em;
+    font-family: 'Permanent Marker', cursive;
+}
+.cerrar
+{
+    font-family: 'Permanent Marker', cursive;
+    position: absolute;
+    right: 10px;
+    font-size:2em;
+    top:0;
+}
+
+.cerrar:hover
+{
+    cursor: pointer;
+}
+
+@media (max-height : 550px)
+{
+   .contenido
+   {
+       height: 580px;
+   }
+}

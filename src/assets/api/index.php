@@ -28,23 +28,98 @@
         return $response;
     })->add(\Middleware::class . ":VerificarExistencia");
 
-    $app->group("/score", function() {
+    // $app->group("/pedidos", function() {
 
+    //     $this->get("[/]", function(Request $request, Response $response) {
+
+    //         Usuario::ObtenerTodosLosPedidos($request, $response);
+    //         return $response;
+    //     });
+
+    //     $this->post("[/]", function(Request $request, Response $response) {
+
+    //         Usuario::SetearScore($request, $response);
+    //         return $response;
+    //     });
+    // })->add(function($request, $response, $next) {
+
+    //     Middleware::VerificarJWT($request, $response, $next, apache_request_headers()["token"]);
+    //     return $response;
+    // });
+
+    // $app->group("/mesas", function() {
+
+    //     $this->get("[/]", function(Request $request, Response $response) {
+
+    //         BaseDeDatos::ListarEntidades($request, $response, "SELECT * FROM `mesas`");
+    //         return $response;
+    //     });
+
+    //     $this->post("[/]", function(Request $request, Response $response) {
+
+    //         $consulta = $request->getParsedBody();
+    //         BaseDeDatos::EjecutarConsulta($request, $response, $consulta["consulta"]);
+    //         return $response;
+    //     });
+    // })->add(function($request, $response, $next) {
+
+    //     Middleware::VerificarJWT($request, $response, $next, apache_request_headers()["token"]);
+    //     return $response;
+    // });
+
+    // $app->group("/listar/", function() {
+
+    //     $this->get("usuarios[/]", function(Request $request, Response $response) {
+
+    //         BaseDeDatos::ListarEntidades($request, $response, "SELECT * FROM `usuarios`");
+    //         return $response;
+    //     });
+
+    //     $this->get("mesas[/]", function(Request $request, Response $response) {
+
+    //         BaseDeDatos::ListarEntidades($request, $response, "SELECT * FROM `mesas`");
+    //         return $response;
+    //     });
+
+    //     $this->get("pedidos[/]", function(Request $request, Response $response) {
+
+    //         BaseDeDatos::ListarEntidades($request, $response, "SELECT * FROM `pedidos`");
+    //         return $response;
+    //     });
+
+    // })->add(function($request, $response, $next) {
+
+    //     Middleware::VerificarJWT($request, $response, $next, apache_request_headers()["token"]);
+    //     return $response;
+    // });
+
+    $app->get("[/]", function(Request $request, Response $response) {
+
+        $entidad = $request->getQueryParams();
+        BaseDeDatos::ListarEntidades($request, $response, "SELECT * FROM `".$entidad["entidad"]."`");
+        return $response;
+    })->add(function($request, $response, $next) {
+
+        Middleware::VerificarJWT($request, $response, $next, apache_request_headers()["token"]);
+        return $response;
+    });
+
+    $app->post("[/]", function(Request $request, Response $response) {
+
+        $consulta = $request->getParsedBody();
+        BaseDeDatos::EjecutarConsulta($request, $response, $consulta["consulta"]);
+        return $response;
+    })->add(function($request, $response, $next) {
+
+        Middleware::VerificarJWT($request, $response, $next, apache_request_headers()["token"]);
+        return $response;
+    });
+
+
+    //Agrego esto para obtener un pedido de un cliente determinado
+    $app->group("/pedido", function() {
         $this->get("[/]", function(Request $request, Response $response) {
-
-            Usuario::ObtenerScore($request, $response);
-            return $response;
-        });
-
-        $this->get("/obtener-scores[/]", function(Request $request, Response $response) {
-
-            Usuario::ObtenerTodosLosScores($request, $response);
-            return $response;
-        });
-
-        $this->post("[/]", function(Request $request, Response $response) {
-
-            Usuario::SetearScore($request, $response);
+            Usuario::TraerPedido($request, $response);
             return $response;
         });
     })->add(function($request, $response, $next) {
@@ -52,6 +127,7 @@
         Middleware::VerificarJWT($request, $response, $next, apache_request_headers()["token"]);
         return $response;
     });
+
 
     $app->run();
 

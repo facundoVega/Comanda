@@ -1,0 +1,110 @@
+<div class="contenido">
+<h1 class="tituloPag"  [class.ocultar]="mostrarEnviar==true">¡¡HAGA SU PEDIDO!!</h1>
+<button class="btnEnviar" [class.mostrar]="mostrarEnviar" (click)="EnviarPedido()">¡Enviar pedido!</button>
+<div class="grupo1">
+  <button class="platos" (click)="Platos()"><span>Platos</span></button>
+  <button class="bebidas" (click)="Bebidas()"><span>Bebidas</span></button>
+  </div>
+  <div class="grupo2">
+  <button class="cervezas" (click)="Cervezas()"><span>Cervezas</span></button>
+  <button class="postres" (click)="Postres()"><span>Postres</span></button>
+</div>
+  <!--________________MENU DE PLATOS______________________________-->
+      <div class="losPlatos1"   [class.mostrar]="desplegarPlatos">
+          <h1>Platos</h1>
+        <div class="losPlatos">
+       
+          <div class="unPlato" *ngFor="let plato of platos">
+            <h2>{{plato.nombre}}</h2>
+            <label class="cantidad">Cantidad</label>
+      
+            <input class="cantidadIngreso" [value]="valorPlatos" #cant type="number" placeholder="0">
+            <span class="precio">${{plato.precio}}</span>
+            <button class="btnPlatos" (click)="ElegirPlatos(plato.precio, plato.nombre, plato.para, plato.id , cant.value)"> Elegir</button>
+            <div class="elegido" [id]="plato.id">
+
+              </div>
+            </div>
+           </div>
+                              <div class="botones">
+                                <button (click)="Aceptar('platos')">Aceptar</button>
+                                <button (click)="Cancelar('platos')">Cancelar</button>
+                                </div>
+          </div>
+
+          <!--*****************Postres************-->
+
+          <div class="losPlatos1"   [class.mostrar]="desplegarPostres">
+            <h1>Postres</h1>
+          <div class="losPlatos">
+         
+            <div class="unPlato" *ngFor="let plato of postres">
+              <h2>{{plato.nombre}}</h2>
+              <label class="cantidad">Cantidad</label>
+        
+              <input class="cantidadIngreso" [value]="valorPostres" #cant type="number" placeholder="0">
+              <span class="precio">${{plato.precio}}</span>
+              <button class="btnPlatos" (click)="ElegirPostres(plato.precio, plato.nombre, plato.para, plato.id , cant.value)"> Elegir</button>
+              <div class="elegido" [id]="plato.id">
+  
+                </div>
+              </div>
+             </div>
+                                <div class="botones">
+                                  <button (click)="Aceptar('postres')">Aceptar</button>
+                                  <button (click)="Cancelar('postres')">Cancelar</button>
+                                  </div>
+            </div>
+  
+   <!--**************************BEBIDAS******************************-->
+            <div class="losPlatos1"   [class.mostrar]="desplegarBebidas">
+              <h1>Bebidas</h1>
+            <div class="losPlatos">
+           
+              <div class="unPlato" *ngFor="let plato of bebidas">
+                <h2>{{plato.nombre}}</h2>
+                <label class="cantidad">Cantidad</label>
+          
+                <input class="cantidadIngreso" #cant type="number" placeholder="0">
+                <span class="precio">${{plato.precio}}</span>
+                <button class="btnPlatos" (click)="ElegirBebidas(plato.precio, plato.nombre, plato.para, plato.id , cant.value)"> Elegir</button>
+                <div class="elegido" [id]="plato.id">
+    
+                  </div>
+                </div>
+               </div>
+                                  <div class="botones">
+                                    <button (click)="Aceptar('bebidas')">Aceptar</button>
+                                    <button (click)="Cancelar('bebidas')">Cancelar</button>
+                                    </div>
+              </div>
+
+              <!--**************************Cervezas******************************-->
+            <div class="losPlatos1"   [class.mostrar]="desplegarCervezas">
+              <h1>Cervezas</h1>
+            <div class="losPlatos">
+           
+              <div class="unPlato" *ngFor="let plato of cervezas">
+                <h2>{{plato.nombre}}</h2>
+                <label class="cantidad">Cantidad</label>
+          
+                <input class="cantidadIngreso" [value]="valorCervezas" #cant type="number" placeholder="0">
+                <span class="precio">${{plato.precio}}</span>
+                <button class="btnPlatos" (click)="ElegirCervezas(plato.precio, plato.nombre, plato.para, plato.id , cant.value)"> Elegir</button>
+                <div class="elegido" [id]="plato.id">
+    
+                  </div>
+                </div>
+               </div>
+                                  <div class="botones">
+                                    <button (click)="Aceptar('cervezas')">Aceptar</button>
+                                    <button (click)="Cancelar('cervezas')">Cancelar</button>
+                                    </div>
+              </div>
+    
+
+ 
+        
+
+
+</div>

@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Anton|Carter+One|Lobster|Ultra');
+
+
+
+.contenido
+{
+    width: 100%;
+   min-height: 92%;
+    background: red;
+    position: relative;
+    
+    background-image: url("../../assets/imgs/fondo.jpg");
+    margin-top: -78px;
+    display: flex;
+    text-align: center;
+  
+    align-items: center;
+    box-sizing: border-box;
+    padding-bottom: 50px;
+    flex-direction: column;
+}

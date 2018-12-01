@@ -5,13 +5,16 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
   @import url('https://fonts.googleapis.com/css?family=Fascinate+Inline');
   @import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
 
-
   .tituloInicial
   {
-    font-family: 'Fascinate Inline', cursive!important;
+    font-family: 'Lobster', cursive;
+
     font-size: 2em;
     
     color: white;
@@ -34,7 +37,7 @@
   top: 1%;
   right: 1%;
   font-family: 'Fascinate Inline', cursive!important;
-  display:none;
+  display:block;
   color:white;
  }
  .btnMenu:hover
@@ -44,6 +47,12 @@
 
  
  
+ }
+ .nombreyTipo
+ {
+  font-size: 20px;
+  color: white;
+  margin-right: 2%;
  }
 .link
 {
@@ -73,12 +82,13 @@
     font-family: 'Luckiest Guy', cursive;
     color:white;
     font-size:1em;
+    display:none;
   }
   .cabecera
   {
     width: 100%;
     height: 78px;
-    background-color: #183c54;
+    background-color: #d60707db;
     box-sizing: border-box;
   }
   .rutas
@@ -121,6 +131,10 @@
    
      
   }
+  .ocultar
+  {
+    display:none;
+  }
   .salir
   {
     justify-content: end;
@@ -153,5 +167,21 @@
   .btnMenu
   {
     display:block;
+  }
+}
+@media (max-width: 320px)
+{
+  .nombreyTipo
+  {
+    display: none;
+  }
+  .btnMenu
+  {
+    font-size:30px;
+  }
+  .tituloInicial
+  {
+    margin-left: 0;
+    font-size:15px;
   }
 }

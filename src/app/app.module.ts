@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RuteoModule } from './ruteo/ruteo.module';
@@ -21,6 +22,14 @@ import { AdivinaComponent } from './adivina/adivina.component';
 import { AgilidadComponent } from './agilidad/agilidad.component';
 import { MisPuntosComponent } from './mis-puntos/mis-puntos.component';
 import { RankingComponent } from './ranking/ranking.component';
+import { MenuComponent } from './menu/menu.component';
+import { PlatosComponent } from './platos/platos.component';
+import { OcuparMesaComponent } from './ocupar-mesa/ocupar-mesa.component';
+import { PagarComponent } from './pagar/pagar.component';
+import { EstadoClienteComponent } from './estado-cliente/estado-cliente.component';
+import { PedidosAceptarComponent } from './pedidos-aceptar/pedidos-aceptar.component';
+import { PedidosEntregarComponent } from './pedidos-entregar/pedidos-entregar.component';
+import { PedidosCocineroComponent } from './pedidos-cocinero/pedidos-cocinero.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +51,23 @@ import { RankingComponent } from './ranking/ranking.component';
 
     MisPuntosComponent,
 
-    RankingComponent
+    RankingComponent,
+
+    MenuComponent,
+
+    PlatosComponent,
+
+    OcuparMesaComponent,
+
+    PagarComponent,
+
+    EstadoClienteComponent,
+
+    PedidosAceptarComponent,
+
+    PedidosEntregarComponent,
+
+    PedidosCocineroComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +77,7 @@ import { RankingComponent } from './ranking/ranking.component';
     HttpClientModule,
     FormsModule,
     LayoutModule
+    
   ],
   providers: [
 

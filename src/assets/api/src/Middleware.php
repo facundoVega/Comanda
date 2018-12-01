@@ -25,6 +25,10 @@
                     if($fila = $resultados->fetch(PDO::FETCH_ASSOC)) {
 
                         $request = $request->withAttribute('nombre', $fila["nombre"]);
+                      
+                        $request = $request->withAttribute('tipo', $fila["tipo"]);
+
+
                         $response = $next($request, $response);
                     } else {
                 

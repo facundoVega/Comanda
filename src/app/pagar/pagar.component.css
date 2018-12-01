@@ -1,0 +1,83 @@
+
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans');
+@import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Anton|Lobster');
+@import url('https://fonts.googleapis.com/css?family=Anton|Lobster|Ultra');
+@import url('https://fonts.googleapis.com/css?family=Anton|Carter+One|Lobster|Ultra');
+
+
+.contenido
+{
+    width: 100%;
+   min-height: 92%;
+    background: red;
+    position: relative;
+    
+    background-image: url("../../assets/imgs/fondo.jpg");
+    margin-top: -78px;
+    display: flex;
+    text-align: center;
+  
+    align-items: center;
+    box-sizing: border-box;
+    padding-bottom: 50px;
+    flex-direction: column;
+}
+
+.cuenta
+{
+    border: 1px solid red;
+    min-width: 40%;
+    background: #fafafa;
+    min-height: 300px;
+    width: 400px;
+    padding-bottom:10px;
+}
+.item
+{
+  
+    /* border-bottom: 2px dotted; */
+    position: relative;
+    width: 90%;
+    position: relative;
+    border-bottom: 2px dotted;
+    margin-left: 5%;
+}
+
+.item span
+{
+    position: absolute;
+    top: 4px;
+    right: 20px;
+}
+.cuenta h2
+{
+    text-align: left;
+    margin-left: 3px;
+}
+
+.total
+{
+    width: 90%;
+    margin-left: 5%;
+    position: relative;
+}
+
+.total span
+{
+    position: absolute;
+    top: 4px;
+    right: 20px;
+}
+
+.btnPagar
+{
+    background: orangered;
+    padding: 5%;
+}
+
+.btnPagar:hover
+{
+    cursor:pointer;
+    background:rgba(228, 20, 20, 0.61);
+}
