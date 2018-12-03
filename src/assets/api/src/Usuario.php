@@ -57,10 +57,10 @@
             $datosUsuario = $request->getQueryParams();
             $entidades = [];
 
-
+            $borrado="borrado";
             try {
                 $conexion = new PDO($datos, $user, $pass);
-                $consula = "SELECT * FROM `pedidos` WHERE `cliente`='".$datosUsuario["cliente"]."'";
+                $consula = "SELECT * FROM `pedidos` WHERE `cliente`='".$datosUsuario["cliente"]."' AND `estado` !='".$borrado."'";
                 $resultados = $conexion->prepare($consula);
                 $resultados->execute();
                 while($fila = $resultados->fetch(PDO::FETCH_ASSOC)) {

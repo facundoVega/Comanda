@@ -79,6 +79,24 @@ Loguear()
 
 
       }
+      if(token.tipo=="cocinero")
+      {
+        location.href = "./Inicial/pedidosCocinero";
+
+
+      }
+      if(token.tipo=="bartender")
+      {
+        location.href = "./Inicial/pedidosBartender";
+
+
+      }
+      if(token.tipo=="cervecero")
+      {
+        location.href = "./Inicial/pedidosCervecero";
+
+
+      }
 
   }
   

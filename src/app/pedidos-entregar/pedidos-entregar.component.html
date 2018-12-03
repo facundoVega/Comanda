@@ -1,31 +1,31 @@
 <div class="contenido">
  
-    <div class="mesas">
-      <h1 class="tituloTabla">Pedidos listos para entregar:</h1>
-  
-      <table>
-              <tr>
-                <th>Mesa</th>
-                <th>Pedido</th>
-                <th>Acción</th>
-              </tr>
-              <tr *ngFor="let pedido of pedidos">
-                <td>{{pedido.mesa}}</td>
-                <td><button class="btnOcupar" (click)="VerPedido(pedido.pedido)">Ver Pedido</button></td>
-                <td><button class="btnOcupar" (click)="AceptarPedido(pedido.codigo)">Aceptar Pedido</button></td>
-              </tr>
-           
-            </table>
-  
-      </div>
-      <div class="elPedido" [class.mostrarPedido]="mostrarPedido">
-          <span (click)="Cerrar()" class="cerrar">&#10008;</span>
-        <h1>Pedido</h1>
-        <div class="unPedido" *ngFor="let item of unPedido">
-        
-          <span class="cantidad"> {{item.cantidad}}</span>
-          <h2>{{item.nombre}}</h2>
-
+        <div class="mesas">
+          <h1 class="tituloTabla">Pedidos para entregar:</h1>
+      
+          <table>
+                  <tr>
+                    <th>Mesa</th>
+                    <th>Pedido</th>
+                    <th>Acción</th>
+                  </tr>
+                  <tr *ngFor="let pedido of pedidos">
+                    <td>{{pedido.mesa}}</td>
+                    <td><button class="btnOcupar" (click)="VerPedido(pedido.pedido)">Ver Pedido</button></td>
+                    <td><button class="btnOcupar" (click)="AceptarPedido(pedido.codigo)">Entregar Pedido</button></td>
+                  </tr>
+               
+                </table>
+      
+          </div>
+          <div class="elPedido" [class.mostrarPedido]="mostrarPedido">
+              <span (click)="Cerrar()" class="cerrar">&#10008;</span>
+            <h1>Pedido</h1>
+            <div class="unPedido" *ngFor="let item of unPedido">
+            
+              <span class="cantidad"> {{item.cantidad}}</span>
+              <h2>{{item.nombre}}</h2>
+    
+            </div>
+          </div>
         </div>
-      </div>
-    </div>

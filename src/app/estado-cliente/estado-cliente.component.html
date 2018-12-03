@@ -1,4 +1,25 @@
 <div class="contenido">
 
-  <h1>Su pedido esta</h1>
+  
+    <h2 class="tituloPagina">Cantidad de pedidos: {{cantidadPedidos}}</h2>
+ 
+    <div class="cajaMensaje" *ngFor="let pedido of pedidos">
+      <h2>Código del pedido:{{pedido.codigo}}</h2>
+    
+      <h2>{{pedido.mensaje}}</h2>
+      <button class="btnMensaje" (click)="VerPedido(pedido.pedido, pedido.codigo)">Ver pedido</button>
+    </div>
+    <div class="fondoPedido" [class.mostrarPedido]="mostrarPedido" >
+        <div class="elPedido">
+            <span (click)="Cerrar()" id="cerrar">&#10008;</span>
+          <h1 id="tituloPedido">Pedido {{codigoActual}}</h1>
+            <div class="unPedido" *ngFor="let item of elPedido">
+          
+                <span class="cantidad"> {{item.cantidad}}</span>
+                <h2>{{item.nombre}}</h2>
+      
+              </div>
+          </div>
+      </div>
 </div>
+

@@ -1,6 +1,6 @@
 <div class="contenido">
   
-  <div class="cuenta">
+  <div class="cuenta"  [class.mostrar]="todosEntregados">
     <h1>Cuenta</h1>
 
 
@@ -13,7 +13,10 @@
       <div class="total">
          <h2>Total</h2><span>${{finalTotal}}</span>
     </div>
-    <button class="btnPagar">Pagar</button>
+    <button class="btnPagar" (click)="Pagar()">Pagar</button>
+  </div>
+  <div class="mensaje"  [class.ocultar]="todosEntregados">
+   <h1 class="elMensaje"> {{mensaje}}</h1>
   </div>
 
 

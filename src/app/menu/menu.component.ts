@@ -278,9 +278,9 @@ public desplegarPlatos:boolean=false;
 
     let randomString = this.RandomString(5, '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ');
 
-    let estadoBartender =" no tiene";
-    let estadoCocinero = " no tiene";
-    let estadoCervecero=" no tiene";
+    let estadoBartender ="notiene";
+    let estadoCocinero = "notiene";
+    let estadoCervecero="notiene";
     //Recorro los pedidios para determinar los clientes que tienen que prepararlo
     for(let i=0;i<this.pedido.length;i++)
     {

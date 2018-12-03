@@ -70,7 +70,7 @@ ocultarRuta4:boolean=false;
       this.ocultarRuta3=true;
       this.ocultarRuta4=true;
     }
-    if(this.tipo=="cocinero")
+    if(this.tipo=="cocinero" ||this.tipo=="bartender" || this.tipo=="cervecero") 
     {
       this.ocultarRuta1=true;
       this.ocultarRuta2=true;

@@ -12,8 +12,8 @@ export class PagarComponent implements OnInit {
   pedido:any[]=[];
   finalTotal=0;
   public usuario: any;
-
-
+  mensaje="No se le entrego todo lo que pidio, por lo que la cuenta no ha sido confeccionada aún.";
+  todosEntregados:boolean=true;
   constructor( private conexion:ConexionService) 
   {
 
@@ -27,12 +27,30 @@ export class PagarComponent implements OnInit {
 
         let pedidoTodo =  (exito as any).entidades;
 
+
         console.log(pedidoTodo);
 
         for(let i=0;i<pedidoTodo.length;i++)
         {
+
+          if(pedidoTodo[i].estado!="entregado" )
+          {
+            //Si hay alguno que no se entrego no muestro la cuenta
+            this.todosEntregados=false;
+            this.mensaje="No se le entrego todo lo que pidio, por lo que la cuenta no ha sido confeccionada aún.";
+          }
+          if(pedidoTodo[i].estado=="borrado" )
+          {
+            //Si hay alguno que no se entrego no muestro la cuenta
+            this.todosEntregados=false;
+            this.mensaje="No tiene ningún pedido.";
+          }
           let arrayConvertido:any;
-          arrayConvertido= JSON.parse(pedidoTodo[i].pedido);
+          if(pedidoTodo[i].estado!="borrado")
+          {
+            arrayConvertido= JSON.parse(pedidoTodo[i].pedido);
+
+          }
           if(i == 0)
           {
             this.pedido = arrayConvertido;
@@ -87,6 +105,56 @@ export class PagarComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  Pagar()
+  {
+    let borrado="borrado";
+    let mesa="";
+
+    this.conexion.EjecutarConsulta(`UPDATE \`pedidos\` SET \`estado\`=\'${borrado}\' WHERE \`cliente\`=\'${this.usuario.correo}\'`).subscribe(
+      exito => {
+
+        if ((exito as any).valido == "true") {
+
+          this.conexion.EjecutarConsulta(`UPDATE \`usuarios\` SET \`mesa\`=\'${mesa}\' WHERE \`correo\`=\'${this.usuario.correo}\'`).subscribe(
+            exito => {
+
+
+              if ((exito as any).valido == "true") {
+
+               alert("Gracias por comer en nuestro restaurante");
+
+            localStorage.setItem("token", "");
+            location.href ="/";
+
+
+              } else {
+
+                alert("Error" + (exito as any).mensaje);
+              }
+            },
+            error => {
+
+          //    this.ocultarSpinner = true;
+              alert("Error" + error)
+            }
+          );
+        } else {
+
+         // this.ocultarSpinner = true;
+          alert("Error" + (exito as any).mensaje);
+        }
+
+      },
+
+      error => {
+
+//        this.ocultarSpinner = true;
+        alert("Error" + error)
+      }
+    );
+
   }
 
 }

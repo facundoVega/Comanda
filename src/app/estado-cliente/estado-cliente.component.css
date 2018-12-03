@@ -19,3 +19,112 @@
     padding-bottom: 50px;
     flex-direction: column;
 }
+
+.tituloPagina
+{
+    font-size: 2em;
+    color: white;
+    text-shadow: 2px 2px black;
+    font-family: 'Anton', sans-serif;
+}
+
+.cajaMensaje
+{
+    width: 40%;
+    /* padding: 5%; */
+   background: #f44336a8;
+    border-radius: 1%;
+    box-shadow: 0 0 black;
+    min-width: 150px;
+  
+    margin-bottom:10px;
+    padding: 0% 5% 5% 5%;
+}
+.cajaMensaje h2
+{
+    font-family: 'Anton', sans-serif;
+    color: white;
+    text-shadow: 2px 2px black;
+    letter-spacing: 1px;
+}
+
+.btnMensaje
+{
+    width: 50%;
+    background: orangered;
+    border-radius: 1%;
+    box-shadow: 0 0 black;
+    min-width: 40px;
+    /* padding-bottom: 5%; */
+    height: 40px;
+    /* color: brown; */
+    font-family: 'Anton', sans-serif;
+
+}
+
+.btnMensaje:hover
+{
+    cursor:pointer;
+}
+
+.fondoPedido
+{
+    width: 100%;
+    height: 100%;
+    background: #13121261;
+    z-index: 3000;
+    position: absolute;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    display:none;
+}
+.mostrarPedido
+{
+    display: flex!important;
+}
+
+.elPedido
+{
+    width: 40%;
+    min-width: 150px;
+    background: white;
+
+    margin-top: 20px;
+    height: max-content;
+    position:relative;
+}
+
+.unPedido
+{
+    position: relative;
+}
+.elPedido h1 , .elPedido h2
+{
+    font-family: 'Anton', sans-serif;
+
+    text-align: left;
+    margin-left: 5%;
+}
+#tituloPedido
+{
+    text-align: center;
+}
+
+#cerrar
+{
+    top: 0;
+    right: 5px;
+}
+#cerrar:hover
+{
+    cursor:pointer;
+}
+.elPedido span
+{
+    position: absolute;
+    top: 0%;
+    font-size: 2em;
+    right: 40px;
+    font-family: 'Anton', sans-serif;
+}

@@ -32,6 +32,22 @@
     min-height: 300px;
     width: 400px;
     padding-bottom:10px;
+    display:none;
+}
+.mostrar
+{
+    display:block!important;
+}
+.ocultar
+{
+    display: none!important;
+}
+.elMensaje
+{
+    font-size: 2em;
+    color: white;
+    text-shadow: 2px 2px black;
+    font-family: 'Anton', sans-serif;
 }
 .item
 {
@@ -80,4 +96,9 @@
 {
     cursor:pointer;
     background:rgba(228, 20, 20, 0.61);
+}
+.mensaje
+{
+    background: rgba(0,0,0,.54);
+    padding: 0 5%;
 }

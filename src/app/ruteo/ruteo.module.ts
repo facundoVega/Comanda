@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { VerificarTipoService } from "../verificar-tipo.service";
 import {Routes, RouterModule} from '@angular/router';
 import { LoginComponent } from '../login/login.component';
 import { InicialComponent } from '../inicial/inicial.component';
@@ -20,9 +21,12 @@ import { EstadoClienteComponent } from '../estado-cliente/estado-cliente.compone
 import  { PedidosEntregarComponent } from '../pedidos-entregar/pedidos-entregar.component';
 import  { PedidosAceptarComponent } from '../pedidos-aceptar/pedidos-aceptar.component';
 import { PedidosCocineroComponent } from '../pedidos-cocinero/pedidos-cocinero.component';
+import { PedidosBartenderComponent } from '../pedidos-bartender/pedidos-bartender.component';
+import { PedidosCervecerosComponent } from '../pedidos-cerveceros/pedidos-cerveceros.component';
+
 
 //Estas rutas son para la web
-/*
+
 
 const rutas: Routes = [
   { path: "", component: LoginComponent },
@@ -32,21 +36,26 @@ const rutas: Routes = [
     {path:"ppt", component:PptComponent, canActivate: [ValidadoraService] },
     {path:"agilidad", component:AgilidadComponent, canActivate: [ValidadoraService] },
     {path:"memoria", component:MemoriaComponent ,canActivate: [ValidadoraService]  },
-    {path:"menu", component:MenuComponent  ,canActivate: [ValidadoraService] },
+    {path:"menu", component:MenuComponent  ,canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["cliente"] } },
     { path: "Puntos", component: RankingComponent, canActivate: [ValidadoraService]  },
     {path:"adivina", component:AdivinaComponent, canActivate: [ValidadoraService] },
-    {path:"ocupar", component:OcuparMesaComponent,  canActivate: [ValidadoraService]},
-       {path:"cuenta", component:PagarComponent,  canActivate: [ValidadoraService]},
-        {path:"estadoPedido", component:EstadoClienteComponent ,  canActivate: [ValidadoraService]},
-        {path:"aceptarPedidos", component:PedidosAceptarComponent ,  canActivate: [ValidadoraService]}
-    ]},
+    {path:"ocupar", component:OcuparMesaComponent,  canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["cliente"] } },
+       {path:"cuenta", component:PagarComponent,  canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["cliente"] } },
+        {path:"estadoPedido", component:EstadoClienteComponent ,  canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["cliente"] } },
+        {path:"aceptarPedidos", component:PedidosAceptarComponent ,  canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["mozo"] } },
+        {path:"pedidosCocinero", component:PedidosCocineroComponent,  canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["cocinero"] } },
+        {path:"pedidosBartender", component:PedidosBartenderComponent,  canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["bartender"] } },
+        {path:"pedidosCervecero", component:PedidosCervecerosComponent,  canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["cervecero"] } },
+        {path:"entregarPedidos", component:PedidosEntregarComponent,canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["mozo"] }  }
+      ]},
     { path: "**", component: NotFoundComponent }
 ];
 
-*/
+
+
 //Estas rutas son para trabajar a nivel local
 
-
+/*
 const rutas: Routes = [
   { path: "", component: InicialComponent },
  
@@ -65,10 +74,15 @@ const rutas: Routes = [
     {path:"estadoPedido", component:EstadoClienteComponent},
     {path:"aceptarPedidos", component:PedidosAceptarComponent},
     {path:"entregarPedidos", component:PedidosEntregarComponent},
-    {path:"pedidosCocinero", component:PedidosCocineroComponent}
+    {path:"pedidosCocinero", component:PedidosCocineroComponent},
+    {path:"pedidosBartender", component:PedidosBartenderComponent},
+    {path:"pedidosCervecero", component:PedidosCervecerosComponent}
+
   ]},
     { path: "**", component: NotFoundComponent }
 ];
+
+*/
 @NgModule({
   imports: [
     CommonModule,

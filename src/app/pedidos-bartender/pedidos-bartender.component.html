@@ -13,7 +13,7 @@
               <tr *ngFor="let pedido of pedidos">
                   <td>{{pedido.codigo}}</td>
                 <td><button class="btnOcupar" (click)="VerPedido(pedido.pedido, pedido.codigo)">Ver Pedido</button></td>
-                <td><button class="btnOcupar" (click)="TerminarPedido(pedido.codigo, pedido.estadoBartender, pedido.estadoCervecero)">Terminado</button></td>
+                <td><button class="btnOcupar" (click)="TerminarPedido(pedido.codigo, pedido.estadoCocinero, pedido.estadoCervecero)">Terminado</button></td>
               </tr>
            
             </table>
@@ -28,17 +28,11 @@
           <h2>{{item.nombre}}</h2>
 
         </div>
-        <button class="tiempo" (click)="mostrarTiempo()">Colocar Tiempo</button>
+       
        
        
           
       </div>
-      <div class="temporizar" [class.mostrar]="mostrarTemporizador">
-          <button (click)="CerrarTiempo()" class="salir">&#9747;</button>
-          <h3>Coloque los minutos aproximados en el que terminara el pedido</h3>
-          <input class="miInput" #ref type="number" maxlength="20">
-        
-          <button class="btnTemporizar" (click)="AceptarTiempo(ref.value)">Aceptar</button>
-        </div>
+   
     
     </div>
