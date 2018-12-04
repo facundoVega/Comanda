@@ -32,6 +32,7 @@ import { PedidosEntregarComponent } from './pedidos-entregar/pedidos-entregar.co
 import { PedidosCocineroComponent } from './pedidos-cocinero/pedidos-cocinero.component';
 import { PedidosBartenderComponent } from './pedidos-bartender/pedidos-bartender.component';
 import { PedidosCervecerosComponent } from './pedidos-cerveceros/pedidos-cerveceros.component';
+import { MesasAdminComponent } from './mesas-admin/mesas-admin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,7 +74,9 @@ import { PedidosCervecerosComponent } from './pedidos-cerveceros/pedidos-cervece
 
     PedidosBartenderComponent,
 
-    PedidosCervecerosComponent
+    PedidosCervecerosComponent,
+
+    MesasAdminComponent
   ],
   imports: [
     BrowserModule,

@@ -29,6 +29,11 @@ export class PagarComponent implements OnInit {
 
 
         console.log(pedidoTodo);
+        if(pedidoTodo.length<1)
+        {
+          this.todosEntregados=false;
+          this.mensaje="No tiene ningún pedido.";
+        }
 
         for(let i=0;i<pedidoTodo.length;i++)
         {
@@ -39,6 +44,7 @@ export class PagarComponent implements OnInit {
             this.todosEntregados=false;
             this.mensaje="No se le entrego todo lo que pidio, por lo que la cuenta no ha sido confeccionada aún.";
           }
+       
           if(pedidoTodo[i].estado=="borrado" )
           {
             //Si hay alguno que no se entrego no muestro la cuenta
@@ -110,7 +116,7 @@ export class PagarComponent implements OnInit {
   Pagar()
   {
     let borrado="borrado";
-    let mesa="";
+    let mesa;
 
     this.conexion.EjecutarConsulta(`UPDATE \`pedidos\` SET \`estado\`=\'${borrado}\' WHERE \`cliente\`=\'${this.usuario.correo}\'`).subscribe(
       exito => {
@@ -123,11 +129,12 @@ export class PagarComponent implements OnInit {
 
               if ((exito as any).valido == "true") {
 
-               alert("Gracias por comer en nuestro restaurante");
+          /*     alert("Gracias por comer en nuestro restaurante");
 
             localStorage.setItem("token", "");
             location.href ="/";
-
+               */
+              this.CambiarMesaEstado();
 
               } else {
 
@@ -155,6 +162,35 @@ export class PagarComponent implements OnInit {
       }
     );
 
+  }
+
+  CambiarMesaEstado()
+  {
+
+    let estado="cerrar";
+    this.conexion.EjecutarConsulta(`UPDATE \`mesas\` SET \`estado\`=\'${estado}\' WHERE \`cliente\`=\'${this.usuario.correo}\'`).subscribe(
+      exito => {
+
+
+        if ((exito as any).valido == "true") {
+
+          alert("Gracias por comer en nuestro restaurante");
+
+          localStorage.setItem("token", "");
+          location.href ="/";
+         
+          
+
+        } else {
+
+          alert("Error" + (exito as any).mensaje);
+        }
+      },
+      error => 
+      {
+        alert("Error" );
+      }
+    );
   }
 
 }

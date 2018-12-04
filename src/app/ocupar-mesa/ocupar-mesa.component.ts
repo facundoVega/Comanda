@@ -13,7 +13,7 @@ export class OcuparMesaComponent implements OnInit {
 
   mesas:any[]=[];
   public usuario: any;
-
+tieneMesa:boolean=false;
 
   constructor( private conexion:ConexionService) { 
 
@@ -21,6 +21,8 @@ export class OcuparMesaComponent implements OnInit {
     this.usuario = JWTHelper.decodeToken(localStorage.getItem("token"));
 
  
+
+    
    this.conexion.ListarEntidades("mesas").subscribe(
       exito => {
 
@@ -33,7 +35,11 @@ export class OcuparMesaComponent implements OnInit {
             this.mesas.push(mesasTodas[i]);
 
           }
-
+          //Me fijo si el usuario actual tiene una mesa ocupada
+          if(mesasTodas[i].estado=="ocupada" && mesasTodas[i].cliente==this.usuario.correo )
+          {
+            this.tieneMesa=true;
+          }
         }
 
 
@@ -51,6 +57,13 @@ export class OcuparMesaComponent implements OnInit {
 
   Ocupar(clave)
   {
+    if(this.tieneMesa)
+    {
+      alert("Usted ya tiene una mesa");
+      return;
+    }
+    
+
     this.conexion.EjecutarConsulta(`UPDATE \`mesas\` SET \`cliente\`=\'${this.usuario.correo}\', \`estado\`='ocupada' WHERE \`codigo\`=\'${clave}\'`).subscribe(
       exito => {
 
@@ -62,9 +75,10 @@ export class OcuparMesaComponent implements OnInit {
 
               if ((exito as any).valido == "true") {
 
+
                alert("Bien!" + `Haz ocupado la mesa ${clave}.`);
                location.href = "./Inicial/menu";
-
+                this.tieneMesa=true;
 
               } else {
 

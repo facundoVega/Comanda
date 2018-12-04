@@ -66,10 +66,19 @@ Loguear()
 
     //Deberia fijarme el tipo de usuario para saber donde lo redirecciono:
     let token= this.jwtHelper.decodeToken(localStorage.getItem("token"));
-
+    console.log("mesaToken"+token.mesa);
       if(token.tipo=="cliente")
       {
-        location.href = "./Inicial/ocupar";
+        if(!token.mesa)
+        {
+          location.href = "./Inicial/ocupar";
+        }
+        else
+        {
+          location.href = "./Inicial/menu";
+        }
+      
+       
 
 
       }
@@ -82,6 +91,12 @@ Loguear()
       if(token.tipo=="cocinero")
       {
         location.href = "./Inicial/pedidosCocinero";
+
+
+      }
+      if(token.tipo=="administrador")
+      {
+        location.href = "./Inicial/mesasAdmin";
 
 
       }

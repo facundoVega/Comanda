@@ -1,0 +1,22 @@
+<div class="contenido">
+ 
+  <div class="mesas">
+    <h1 class="tituloTabla">Mesas</h1>
+
+    <table>
+            <tr>
+              <th>Código</th>
+              <th>Estado</th>
+              <th>Acción</th>
+            </tr>
+            <tr *ngFor="let mesa of mesas">
+              <td>{{mesa.codigo}}</td>
+              <td>{{mesa.estado}}</td>
+              <td><button class="btnOcupar" [class.mostrarBtn]="mesa.mostrarBoton" (click)="Cerrar(mesa.codigo)">Cerrar mesa</button></td>
+            </tr>
+         
+          </table>
+
+    </div>
+
+  </div>

@@ -19,17 +19,24 @@ export class VerificarTipoService implements CanActivate {
     token = JWTHelper.decodeToken(localStorage.getItem("token"));
 
     for (let item of roles) {
-
+      console.log("algo"+item);
+      console.log("algo"+token.tipo);
       if (item == token.tipo) {
 
         retorno = true;
+        console.log(retorno);
         break;
       }
     }
 
     if (!retorno)
-      this.router.navigate([LoginComponent]);
+    {
+      console.log("retorno dentro del no retorno");
+    localStorage.setItem("token", "");
+    location.href ="/";
 
     return retorno;
+  }
+  return retorno;
   }
 }

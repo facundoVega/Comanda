@@ -23,6 +23,7 @@ import  { PedidosAceptarComponent } from '../pedidos-aceptar/pedidos-aceptar.com
 import { PedidosCocineroComponent } from '../pedidos-cocinero/pedidos-cocinero.component';
 import { PedidosBartenderComponent } from '../pedidos-bartender/pedidos-bartender.component';
 import { PedidosCervecerosComponent } from '../pedidos-cerveceros/pedidos-cerveceros.component';
+import { MesasAdminComponent } from '../mesas-admin/mesas-admin.component';
 
 
 //Estas rutas son para la web
@@ -46,16 +47,19 @@ const rutas: Routes = [
         {path:"pedidosCocinero", component:PedidosCocineroComponent,  canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["cocinero"] } },
         {path:"pedidosBartender", component:PedidosBartenderComponent,  canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["bartender"] } },
         {path:"pedidosCervecero", component:PedidosCervecerosComponent,  canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["cervecero"] } },
-        {path:"entregarPedidos", component:PedidosEntregarComponent,canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["mozo"] }  }
+        {path:"entregarPedidos", component:PedidosEntregarComponent,canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["mozo"] }  },
+            {path:"mesasAdmin", component:MesasAdminComponent , canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["administrador"] } }
+
       ]},
     { path: "**", component: NotFoundComponent }
 ];
+/*
 
 
 
 //Estas rutas son para trabajar a nivel local
 
-/*
+
 const rutas: Routes = [
   { path: "", component: InicialComponent },
  
@@ -69,20 +73,22 @@ const rutas: Routes = [
     {path:"adivina", component:AdivinaComponent},
     {path:"menu", component:MenuComponent},
     {path:"platos", component:PlatosComponent},
-    {path:"ocupar", component:OcuparMesaComponent},
+    {path:"ocupar", component:OcuparMesaComponent,canActivate: [VerificarTipoService], data: { roles: ["cliente"] }},
     {path:"cuenta", component:PagarComponent},
     {path:"estadoPedido", component:EstadoClienteComponent},
     {path:"aceptarPedidos", component:PedidosAceptarComponent},
     {path:"entregarPedidos", component:PedidosEntregarComponent},
     {path:"pedidosCocinero", component:PedidosCocineroComponent},
     {path:"pedidosBartender", component:PedidosBartenderComponent},
-    {path:"pedidosCervecero", component:PedidosCervecerosComponent}
+    {path:"pedidosCervecero", component:PedidosCervecerosComponent},
+    {path:"mesasAdmin", component:MesasAdminComponent}
+
 
   ]},
     { path: "**", component: NotFoundComponent }
 ];
-
 */
+
 @NgModule({
   imports: [
     CommonModule,
