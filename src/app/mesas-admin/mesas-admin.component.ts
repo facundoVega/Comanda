@@ -58,7 +58,8 @@ export class MesasAdminComponent implements OnInit {
   Cerrar(codigo)
   {
     let libre="libre";
-    this.conexion.EjecutarConsulta(`UPDATE \`mesas\` SET \`estado\`=\'${libre}\' WHERE \`codigo\`=\'${codigo}\'`).subscribe(
+    let cliente="";
+    this.conexion.EjecutarConsulta(`UPDATE \`mesas\` SET \`estado\`=\'${libre}\', \`cliente\`=\'${cliente}\' WHERE \`codigo\`=\'${codigo}\'`).subscribe(
       exito => {
 
         if ((exito as any).valido == "true") {

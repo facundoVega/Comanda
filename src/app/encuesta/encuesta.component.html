@@ -1,0 +1,23 @@
+<div class="contenido">
+    <h1>Ayudenos a brindarle un mejor servicio cada vez completando esta encuesta:</h1>
+
+  <div class="encuesta">
+
+  <h2>1) Del 1 al 10, ¿Qué puntuación le pondría a la comodidad de la mesa?</h2>
+  <input type="number"  class="puntaje" [(ngModel)]="resp1">
+
+
+  <h2>2) Del 1 al 10, ¿Qué puntuación le pondría a nuestro restaurante en gral?</h2>
+  <input  class="puntaje" type="number"  [(ngModel)]="resp2">
+
+  <h2>3) Del 1 al 10, ¿Qué puntuación le pondría a la atención del mozo?</h2>
+  <input type="number"  class="puntaje"  [(ngModel)]="resp3">
+
+  <h2>4) Del 1 al 10, ¿Qué puntuación le pondría al sabor los platos del cocinero?</h2>
+  <input type="number"  class="puntaje"  [(ngModel)]="resp4">
+
+  <h2>5) Cuentenos un poco sobre su experiencia en nuestro restaurante</h2>
+  <textarea class="texto" rows="4" cols="50"  [(ngModel)]="resp5"></textarea>
+  <button class="btnEnviar" (click)="Enviar()">Enviar</button>
+  </div>
+</div>

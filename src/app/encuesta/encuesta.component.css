@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Anton|Carter+One|Lobster|Ultra');
+@import url('https://fonts.googleapis.com/css?family=Anton|Carter+One|Lobster|Ultra');
+
+.contenido
+{
+    width: 100%;
+   min-height: 92%;
+    background: red;
+    position: relative;
+    
+    background-image: url("../../assets/imgs/fondo.jpg");
+    margin-top: -78px;
+    display: flex;
+    text-align: center;
+  
+    align-items: center;
+    box-sizing: border-box;
+    padding-bottom: 50px;
+    flex-direction: column;
+}
+
+h1, h2
+{
+    font-family: 'Anton', sans-serif;
+}
+
+.encuesta
+{
+    border: 1px solid;
+    text-align: center;
+    /* display: flex; */
+    /* flex-direction: column; */
+    background: #ffffff42;
+    padding: 5% 5%;
+    width: 40%;
+    min-width: 50%;
+    border-radius: 5% 5%;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.puntaje
+{
+    width: 40px;
+    padding: 5px;
+}
+.btnEnviar
+{
+   
+
+    padding: 5px;
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    background: orangered;
+    color: white;
+    height: 40px;
+    width: 75px;
+}
+
+.btnEnviar:hover
+{
+    cursor:pointer;
+ 
+}
+.texto
+{
+    width:40%;
+}

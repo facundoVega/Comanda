@@ -33,6 +33,10 @@ import { PedidosCocineroComponent } from './pedidos-cocinero/pedidos-cocinero.co
 import { PedidosBartenderComponent } from './pedidos-bartender/pedidos-bartender.component';
 import { PedidosCervecerosComponent } from './pedidos-cerveceros/pedidos-cerveceros.component';
 import { MesasAdminComponent } from './mesas-admin/mesas-admin.component';
+import { EncuestaComponent } from './encuesta/encuesta.component';
+import { AltaUsuariosComponent } from './alta-usuarios/alta-usuarios.component';
+import { ResultadosEncuestaComponent } from './resultados-encuesta/resultados-encuesta.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,7 +80,13 @@ import { MesasAdminComponent } from './mesas-admin/mesas-admin.component';
 
     PedidosCervecerosComponent,
 
-    MesasAdminComponent
+    MesasAdminComponent,
+
+    EncuestaComponent,
+
+    AltaUsuariosComponent,
+
+    ResultadosEncuestaComponent
   ],
   imports: [
     BrowserModule,

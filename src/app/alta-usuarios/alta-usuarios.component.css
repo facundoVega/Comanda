@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Anton|Carter+One|Lobster|Ultra');
+@import url('https://fonts.googleapis.com/css?family=Anton|Carter+One|Lobster|Ultra');
+
+.contenido
+{
+    width: 100%;
+   min-height: 92%;
+    background: red;
+    position: relative;
+    
+    background-image: url("../../assets/imgs/fondo.jpg");
+    margin-top: -78px;
+    display: flex;
+    text-align: center;
+  
+    align-items: center;
+    box-sizing: border-box;
+    padding-bottom: 50px;
+    flex-direction: column;
+}
+.tituloPagina 
+{
+    font-family: 'Anton', sans-serif;
+    border-bottom: 2px solid;
+    text-shadow: 1px 1px white;
+}
+.alta
+{
+    border: 1px solid;
+    text-align: center;
+    /* display: flex; */
+    /* flex-direction: column; */
+    background: #ffffff42;
+    padding: 5% 5%;
+    width: 40%;
+    min-width: 50%;
+    border-radius: 5% 5%;
+    position: relative;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    font-family: 'Anton', sans-serif;
+}
+.input
+{
+    padding: 2%;
+    margin-bottom: 15px;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 2px solid;
+    color: black;
+    font-family: 'Anton', sans-serif;
+    font-size: 1.5em;
+}
+.btnCargar
+{
+    margin-top: 10%;
+    width: 50%;
+    margin-left: 25%;
+    height: 50px;
+    background: orangered;
+    color: white;
+    font-family: 'Anton', sans-serif;
+}
+.btnCargar:hover
+{
+    cursor:pointer;
+    color:black;
+}
+label
+{
+    color: black;
+    font-family: 'Anton', sans-serif;
+    font-size: 1.5em;
+}
+
+.miSelect
+{
+    height: 60px;
+    background: transparent;
+    border: 1px solid;
+    outline: none;
+    font-size: 1.5em;  
+    font-family: 'Anton', sans-serif;
+}

@@ -1,0 +1,19 @@
+<div class="contenido">
+  <h1 class="tituloPagina">Alta de usuarios</h1>
+
+  <div class="alta">
+    <input  class="input" type="text" placeholder="nombre" [(ngModel)]="nombre">
+    <input class="input" type="text" placeholder="correo" [(ngModel)]="correo">
+    <input class="input"  type="text" placeholder="Clave" [(ngModel)]="clave">
+    <label>Tipo</label>
+    <select class="miSelect" [(ngModel)]="tipo">
+        <option value="administrador">Admin</option>
+        <option value="cliente">Cliente</option>
+        <option value="mozo">Mozo</option>
+        <option value="cocinero">Cocinero</option>
+        <option value="bartender">Bartender</option>
+        <option value="cervecero">Cervecero</option>
+      </select>
+      <button class="btnCargar" (click)="Cargar()">Cargar</button>
+  </div>
+  </div>

@@ -81,6 +81,21 @@ ocultarRuta4:boolean=false;
 
     }
 
+    if(this.tipo=="administrador")
+    {
+    
+      this.ruta1="mesasAdmin";
+      this.menu1="mesas";
+
+      this.ruta2="alta";
+      this.menu2="alta usuarios";
+    
+    
+
+      this.ocultarRuta3=true;
+      this.ocultarRuta4=true;
+    }
+
     } catch (error) {
    console.log("error");
     }

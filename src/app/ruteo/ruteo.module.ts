@@ -24,7 +24,8 @@ import { PedidosCocineroComponent } from '../pedidos-cocinero/pedidos-cocinero.c
 import { PedidosBartenderComponent } from '../pedidos-bartender/pedidos-bartender.component';
 import { PedidosCervecerosComponent } from '../pedidos-cerveceros/pedidos-cerveceros.component';
 import { MesasAdminComponent } from '../mesas-admin/mesas-admin.component';
-
+import { EncuestaComponent } from '../encuesta/encuesta.component';
+import { AltaUsuariosComponent } from '../alta-usuarios/alta-usuarios.component';
 
 //Estas rutas son para la web
 
@@ -48,14 +49,17 @@ const rutas: Routes = [
         {path:"pedidosBartender", component:PedidosBartenderComponent,  canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["bartender"] } },
         {path:"pedidosCervecero", component:PedidosCervecerosComponent,  canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["cervecero"] } },
         {path:"entregarPedidos", component:PedidosEntregarComponent,canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["mozo"] }  },
-            {path:"mesasAdmin", component:MesasAdminComponent , canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["administrador"] } }
-
+        {path:"mesasAdmin", component:MesasAdminComponent , canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["administrador"] } },
+        {path:"encuesta", component:EncuestaComponent , canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["cliente"] } },
+       {path:"alta", component:AltaUsuariosComponent , canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["administrador"] } }
       ]},
     { path: "**", component: NotFoundComponent }
 ];
+
+
+
+
 /*
-
-
 
 //Estas rutas son para trabajar a nivel local
 
@@ -81,7 +85,9 @@ const rutas: Routes = [
     {path:"pedidosCocinero", component:PedidosCocineroComponent},
     {path:"pedidosBartender", component:PedidosBartenderComponent},
     {path:"pedidosCervecero", component:PedidosCervecerosComponent},
-    {path:"mesasAdmin", component:MesasAdminComponent}
+    {path:"mesasAdmin", component:MesasAdminComponent},
+    {path:"encuesta", component:EncuestaComponent },
+    {path:"alta", component:AltaUsuariosComponent }
 
 
   ]},

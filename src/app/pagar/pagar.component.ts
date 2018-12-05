@@ -116,7 +116,7 @@ export class PagarComponent implements OnInit {
   Pagar()
   {
     let borrado="borrado";
-    let mesa;
+    let mesa="";
 
     this.conexion.EjecutarConsulta(`UPDATE \`pedidos\` SET \`estado\`=\'${borrado}\' WHERE \`cliente\`=\'${this.usuario.correo}\'`).subscribe(
       exito => {
@@ -176,8 +176,8 @@ export class PagarComponent implements OnInit {
 
           alert("Gracias por comer en nuestro restaurante");
 
-          localStorage.setItem("token", "");
-          location.href ="/";
+       //   localStorage.setItem("token", "");
+          location.href ="/Inicial/encuesta";
          
           
 
