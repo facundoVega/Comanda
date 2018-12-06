@@ -19,6 +19,6 @@ export class ConexionService {
   public ListarEntidades(entidad:string){return this.http.get(`../../assets/api/index.php?entidad=${entidad}`, config);}
   public EjecutarConsulta(consulta: string) { return this.http.post("../../assets/api/index.php", { consulta: consulta }, config); }
   public ObtenerPedido(cliente: string) { return this.http.get(`../../assets/api/pedido?cliente=${cliente}`, config); }
-  public Registrar2(correo: string, nombre: string, clave: string, tipo:string) { return this.http.post("../../assets/api/registro", { "correo": correo, "nombre": nombre, "clave": clave, "tipo":tipo } ); }
+  public Registrar2(correo: string, nombre: string, clave: string, tipo:string) { return this.http.post("../../assets/api/registro2", { "correo": correo, "nombre": nombre, "clave": clave, "tipo":tipo } ); }
 
 }

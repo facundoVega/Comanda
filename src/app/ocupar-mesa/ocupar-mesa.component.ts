@@ -14,9 +14,13 @@ export class OcuparMesaComponent implements OnInit {
   mesas:any[]=[];
   public usuario: any;
 tieneMesa:boolean=false;
+mostrarSpinner:boolean=false;
+
 
   constructor( private conexion:ConexionService) { 
+    this.mostrarSpinner=true;
 
+    
     let JWTHelper = new JwtHelperService();
     this.usuario = JWTHelper.decodeToken(localStorage.getItem("token"));
 
@@ -26,6 +30,7 @@ tieneMesa:boolean=false;
    this.conexion.ListarEntidades("mesas").subscribe(
       exito => {
 
+          this.mostrarSpinner=false;
        let mesasTodas = (exito as any).entidades;
         for(let i=0; i<mesasTodas.length;i++ )
         {
@@ -44,9 +49,12 @@ tieneMesa:boolean=false;
 
 
       },
-      error =>alert("Error" + JSON.stringify(error)) 
+      error =>{
+      
+      alert("Error" + JSON.stringify(error)) 
+      this.mostrarSpinner=false;
 
-
+      }
     );
 
 

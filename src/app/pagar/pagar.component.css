@@ -38,6 +38,17 @@
 {
     display:block!important;
 }
+.spinner
+{
+    width:100px;
+    display:none;
+
+}
+.mostrarSpinner
+{
+    display: block!important;
+}
+
 .ocultar
 {
     display: none!important;

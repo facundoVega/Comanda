@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Anton|Carter+One|Lobster|Ultra');
+@import url('https://fonts.googleapis.com/css?family=Anton|Carter+One|Lobster|Ultra');
+
+.contenido
+{
+    width: 100%;
+   min-height: 92%;
+    background: red;
+    position: relative;
+    
+    background-image: url("../../assets/imgs/fondo.jpg");
+    margin-top: -78px;
+    display: flex;
+    text-align: center;
+  
+    align-items: center;
+    box-sizing: border-box;
+    padding-bottom: 50px;
+    flex-direction: column;
+}
+.altoCanvas
+{
+    display: block;
+    width: 788px;
+    height: 394px;
+  
+    padding: 5% 5%;
+    box-sizing: border-box;
+}
+
+.vaCanvas
+{
+
+  
+    width: 50%;
+background-color:white;
+display:none;
+   
+}
+
+.mostrarCanvas
+{
+    display: block!important;
+}
+
+.tituloPagina
+{
+    font-family: 'Anton', sans-serif;
+    text-shadow:1px 1px white;
+}
+
+.botones
+{
+  
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+.botones button
+{
+    height: 40px;
+    background: orangered;
+    color: white;
+}
+.botones button:hover
+{
+    cursor:pointer;
+}
+
+.opiniones
+{
+    width: 40%;
+    /* padding: 5%; */
+   background: #f44336a8;
+    border-radius: 1%;
+    box-shadow: 0 0 black;
+    min-width: 150px;
+  
+    margin-bottom:10px;
+    padding: 0% 5% 5% 5%;
+    margin-top:20px;
+
+}
+
+.opiniones p
+{
+    font-family: 'Anton', sans-serif;
+}
+.opiniones h2
+{
+
+    font-family: 'Anton', sans-serif;
+    color: rgb(255, 246, 246);
+    text-shadow: 2px 2px black;
+    letter-spacing: 1px;
+}
+
+.tituloOpiniones
+{
+    font-family: 'Anton', sans-serif;
+    text-shadow:1px 1px white;
+    border-top:2px solid black;
+
+}
+
+
+@media (max-width: 580px)
+{
+ .botones
+ {
+     display: block;
+ }
+  .botones button
+  {
+      width:50%;
+
+  }
+}

@@ -13,6 +13,8 @@ export class MesasAdminComponent implements OnInit {
   public usuario: any;
   tieneMesa:boolean=false;
   mostrarBoton:boolean=false;
+  mostrarSpinner:boolean=false;
+
 
   constructor(private conexion:ConexionService) 
   {
@@ -20,7 +22,7 @@ export class MesasAdminComponent implements OnInit {
 
 
 
- 
+ this.mostrarSpinner=true;
 
     
    this.conexion.ListarEntidades("mesas").subscribe(
@@ -28,7 +30,7 @@ export class MesasAdminComponent implements OnInit {
 
        let mesasTodas = (exito as any).entidades;
        this.mesas=mesasTodas;
-
+        this.mostrarSpinner=false;
         for(let i=0; i<mesasTodas.length;i++ )
         {
           console.log(mesasTodas[i]);
@@ -43,9 +45,11 @@ export class MesasAdminComponent implements OnInit {
 
 
       },
-      error =>alert("Error" + JSON.stringify(error)) 
-
-
+      error =>{
+        
+        alert("Error" + JSON.stringify(error)) 
+        this.mostrarSpinner=false;
+      }
     );
 
 

@@ -36,7 +36,7 @@ import { MesasAdminComponent } from './mesas-admin/mesas-admin.component';
 import { EncuestaComponent } from './encuesta/encuesta.component';
 import { AltaUsuariosComponent } from './alta-usuarios/alta-usuarios.component';
 import { ResultadosEncuestaComponent } from './resultados-encuesta/resultados-encuesta.component';
-
+import { ChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -87,6 +87,8 @@ import { ResultadosEncuestaComponent } from './resultados-encuesta/resultados-en
     AltaUsuariosComponent,
 
     ResultadosEncuestaComponent
+
+  
   ],
   imports: [
     BrowserModule,
@@ -95,7 +97,8 @@ import { ResultadosEncuestaComponent } from './resultados-encuesta/resultados-en
     MyOwnCustomMaterialModule,
     HttpClientModule,
     FormsModule,
-    LayoutModule
+    LayoutModule,
+    ChartsModule
     
   ],
   providers: [

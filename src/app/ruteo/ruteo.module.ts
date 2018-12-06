@@ -26,8 +26,10 @@ import { PedidosCervecerosComponent } from '../pedidos-cerveceros/pedidos-cervec
 import { MesasAdminComponent } from '../mesas-admin/mesas-admin.component';
 import { EncuestaComponent } from '../encuesta/encuesta.component';
 import { AltaUsuariosComponent } from '../alta-usuarios/alta-usuarios.component';
+import { ResultadosEncuestaComponent } from '../resultados-encuesta/resultados-encuesta.component';
 
 //Estas rutas son para la web
+
 
 
 const rutas: Routes = [
@@ -51,7 +53,9 @@ const rutas: Routes = [
         {path:"entregarPedidos", component:PedidosEntregarComponent,canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["mozo"] }  },
         {path:"mesasAdmin", component:MesasAdminComponent , canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["administrador"] } },
         {path:"encuesta", component:EncuestaComponent , canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["cliente"] } },
-       {path:"alta", component:AltaUsuariosComponent , canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["administrador"] } }
+       {path:"alta", component:AltaUsuariosComponent , canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["administrador"] } },
+           {path:"resEncuestas", component: ResultadosEncuestaComponent , canActivate: [ValidadoraService, VerificarTipoService], data: { roles: ["administrador"] } }
+
       ]},
     { path: "**", component: NotFoundComponent }
 ];
@@ -59,10 +63,10 @@ const rutas: Routes = [
 
 
 
-/*
+
 
 //Estas rutas son para trabajar a nivel local
-
+/*
 
 const rutas: Routes = [
   { path: "", component: InicialComponent },
@@ -77,7 +81,7 @@ const rutas: Routes = [
     {path:"adivina", component:AdivinaComponent},
     {path:"menu", component:MenuComponent},
     {path:"platos", component:PlatosComponent},
-    {path:"ocupar", component:OcuparMesaComponent,canActivate: [VerificarTipoService], data: { roles: ["cliente"] }},
+    {path:"ocupar", component:OcuparMesaComponent},
     {path:"cuenta", component:PagarComponent},
     {path:"estadoPedido", component:EstadoClienteComponent},
     {path:"aceptarPedidos", component:PedidosAceptarComponent},
@@ -87,8 +91,8 @@ const rutas: Routes = [
     {path:"pedidosCervecero", component:PedidosCervecerosComponent},
     {path:"mesasAdmin", component:MesasAdminComponent},
     {path:"encuesta", component:EncuestaComponent },
-    {path:"alta", component:AltaUsuariosComponent }
-
+    {path:"alta", component:AltaUsuariosComponent },
+    {path:"resEncuestas", component: ResultadosEncuestaComponent }
 
   ]},
     { path: "**", component: NotFoundComponent }

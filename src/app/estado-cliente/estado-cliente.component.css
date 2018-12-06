@@ -43,7 +43,7 @@
 .cajaMensaje h2
 {
     font-family: 'Anton', sans-serif;
-    color: white;
+    color: rgb(255, 246, 246);
     text-shadow: 2px 2px black;
     letter-spacing: 1px;
 }
@@ -61,7 +61,16 @@
     font-family: 'Anton', sans-serif;
 
 }
+.spinner
+{
+    width:100px;
+    display:none;
 
+}
+.mostrarSpinner
+{
+    display: block!important;
+}
 .btnMensaje:hover
 {
     cursor:pointer;

@@ -18,8 +18,14 @@ elPedido:any;
 codigoActual;
 usuario:any;
 mostrarPedido:boolean=false;
+mostrarSpinner:boolean=false;
+
   constructor(private conexion:ConexionService) 
   {
+
+    this.mostrarSpinner=true;
+    
+    
     let JWTHelper = new JwtHelperService();
     this.usuario = JWTHelper.decodeToken(localStorage.getItem("token"));
 
@@ -63,16 +69,24 @@ mostrarPedido:boolean=false;
        
      } 
 
-
+     this.mostrarSpinner=false;
        
 
       },
-      error =>alert("Error" + JSON.stringify(error)) 
+      error =>{
+
+        alert("Error" + JSON.stringify(error)) ;
+        this.mostrarSpinner=false;
+
+
+      }
+      
 
 
     );
   
       //Funcio
+      
   }
 
   ngOnInit() {

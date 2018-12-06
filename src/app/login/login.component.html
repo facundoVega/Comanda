@@ -1,4 +1,6 @@
 
+<div class="contenido">
+  
 
 <div class="elRegistro" [class.ocultar2]="ocultarRegistro">
     <div class="cuadroRegistro">
@@ -17,17 +19,24 @@
     <div class="cuadroLogin">
       <button class="cerrar" (click)="CerrarLogin()"></button>
 
-        <img class="cerebro2" src="../../assets/imgs/logo.png">
+        <img class="cerebro2" [class.rubberBand]="activarSpinnerLogin" src="../../assets/imgs/logo.png">
       <h1>Iniciar Sesi&oacute;n</h1>
    
         <input type="text" [(ngModel)]="correoLogin" placeholder="Usuario" name="userLogin">
         <input type="password" [(ngModel)]="passLogin" placeholder="contraseña">
         <button class="Login" (click)="Loguear()">Entrar</button>
-    
+ 
     </div>
+    <div class="botones">
+        <button (click)="Setear('cliente')">Cliente</button>
+        <button (click)="Setear('mozo')">Mozo</button>
+        <button (click)="Setear('bartender')">Bartender</button>
+        <button (click)="Setear('cocinero')">Cocinero</button>
+        <button (click)="Setear('cervecero')">Cervecero</button>
+        <button (click)="Setear('admin')">Admin</button>
+
+      </div>
   </div>
-<div class="contenido">
-  
       
   <div class="caratula">
     <div class="titulo">

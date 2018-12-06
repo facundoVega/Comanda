@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ConexionService } from '../conexion.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { query } from '@angular/animations';
 
 @Component({
   selector: 'app-pagar',
@@ -13,10 +14,15 @@ export class PagarComponent implements OnInit {
   finalTotal=0;
   public usuario: any;
   mensaje="No se le entrego todo lo que pidio, por lo que la cuenta no ha sido confeccionada aún.";
-  todosEntregados:boolean=true;
+  todosEntregados:boolean=false;
+  mostrarSpinner:boolean=false;
+
+
   constructor( private conexion:ConexionService) 
   {
 
+
+    this.mostrarSpinner=true;
 
    let JWTHelper = new JwtHelperService();
     this.usuario = JWTHelper.decodeToken(localStorage.getItem("token"));
@@ -26,13 +32,15 @@ export class PagarComponent implements OnInit {
       exito => {
 
         let pedidoTodo =  (exito as any).entidades;
-
+        this.mostrarSpinner=false; 
+        this.todosEntregados=true;
 
         console.log(pedidoTodo);
         if(pedidoTodo.length<1)
         {
           this.todosEntregados=false;
           this.mensaje="No tiene ningún pedido.";
+          this.mostrarSpinner=false;
         }
 
         for(let i=0;i<pedidoTodo.length;i++)
@@ -43,6 +51,7 @@ export class PagarComponent implements OnInit {
             //Si hay alguno que no se entrego no muestro la cuenta
             this.todosEntregados=false;
             this.mensaje="No se le entrego todo lo que pidio, por lo que la cuenta no ha sido confeccionada aún.";
+            this.mostrarSpinner=false;
           }
        
           if(pedidoTodo[i].estado=="borrado" )
@@ -50,6 +59,7 @@ export class PagarComponent implements OnInit {
             //Si hay alguno que no se entrego no muestro la cuenta
             this.todosEntregados=false;
             this.mensaje="No tiene ningún pedido.";
+            this.mostrarSpinner=false;
           }
           let arrayConvertido:any;
           if(pedidoTodo[i].estado!="borrado")
@@ -78,6 +88,7 @@ export class PagarComponent implements OnInit {
         //Sumo el total del pedido
         for(let i=0; i<this.pedido.length;i++)
         {
+          this.mostrarSpinner=false;
           console.log(this.pedido[i]);
           let total = parseInt(this.pedido[i].precio) * parseInt(this.pedido[i].cantidad);
           this.pedido[i].total= total;
@@ -97,7 +108,13 @@ export class PagarComponent implements OnInit {
 
 
       },
-      error =>alert("Error" + JSON.stringify(error)) 
+      error =>{
+        alert("Error" + JSON.stringify(error));
+        this.mostrarSpinner=false; 
+
+      }
+      
+     
 
 
     );

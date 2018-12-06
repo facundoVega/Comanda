@@ -1,3 +1,54 @@
-<p>
-  resultados-encuesta works!
-</p>
+<div class="contenido">
+  <h1 class="tituloPagina">Resultados de las encuestas en gráficos</h1> 
+  <div class="vaCanvas" [class.mostrarCanvas]="mostrarChart1">
+    <h2 class="tituloPagina">  ¿Qué puntuación le pondría a la comodidad de la mesa?</h2>
+    <canvas class="altoCanvas" baseChart
+    [data]="pregunta1Data"
+    [labels]="pregunta1Labels"
+    [chartType]="doughnutChartType"
+  
+    (chartClick)="chartClicked($event)"></canvas>
+    
+    </div>
+    <div class="vaCanvas" [class.mostrarCanvas]="mostrarChart2" >
+        <h2 class="tituloPagina">  ¿Qué puntuación le pondría a nuestro restaurante en gral?</h2>
+        <canvas class="altoCanvas" baseChart
+        [data]="pregunta2Data"
+        [labels]="pregunta2Labels"
+        [chartType]="doughnutChartType"
+      
+        (chartClick)="chartClicked($event)"></canvas>
+        
+        </div>
+        <div class="vaCanvas" [class.mostrarCanvas]="mostrarChart3">
+            <h2 class="tituloPagina">  ¿Qué puntuación le pondría a la atención del mozo?</h2>
+            <canvas class="altoCanvas" baseChart
+            [data]="pregunta3Data"
+            [labels]="pregunta3Labels"
+            [chartType]="doughnutChartType"
+   
+            (chartClick)="chartClicked($event)"></canvas>
+            
+            </div>
+            <div class="vaCanvas" [class.mostrarCanvas]="mostrarChart4">
+                <h2 class="tituloPagina">  ¿Qué puntuación le pondría al sabor los platos del cocinero?</h2>
+                <canvas class="altoCanvas" baseChart
+                [data]="pregunta4Data"
+                [labels]="pregunta4Labels"
+                [chartType]="doughnutChartType"
+          
+                (chartClick)="chartClicked($event)"></canvas>
+                
+                </div>
+    <div class="botones">
+      <button (click)="Mostrar('1')">Pregunta 1</button>
+      <button (click)="Mostrar('2')">Pregunta 2</button>
+      <button  (click)="Mostrar('3')">Pregunta 3</button>
+      <button  (click)="Mostrar('4')">Pregunta 4</button>
+    </div>
+    <h1 class="tituloOpiniones">Opiniones de usuarios</h1>
+    <div class="opiniones" *ngFor="let opinion of encuestas">
+      <h2 class="user">{{opinion.cliente}}</h2>
+      <p class="opinion">{{opinion.resp5}}</p>
+    </div>
+</div>

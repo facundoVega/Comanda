@@ -90,9 +90,10 @@ ocultarRuta4:boolean=false;
       this.ruta2="alta";
       this.menu2="alta usuarios";
     
-    
+      this.ruta3="resEncuestas";
+      this.menu3="Resultado de las encuestas";
 
-      this.ocultarRuta3=true;
+     
       this.ocultarRuta4=true;
     }
 
